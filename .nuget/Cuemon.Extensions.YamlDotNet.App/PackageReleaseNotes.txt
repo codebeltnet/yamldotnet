@@ -1,0 +1,11 @@
+﻿Version 8.4.0
+Availability: .NET 8, .NET 6 and .NET Standard 2.0
+ 
+# ALM
+- CHANGED Dependencies to latest and greatest with respect to TFMs
+ 
+# References
+- Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml
+- Codebelt.Extensions.AspNetCore.Text.Yaml
+- Codebelt.Extensions.YamlDotNet
+ 

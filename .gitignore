@@ -365,6 +365,7 @@ FodyWeavers.xsd
 # DocFx
 /.docfx/wwwroot
 /.docfx/api/**/*.yml
+!/.docfx/packages/**
 /.docfx/**/*.manifest
 /.docfx/.vscode/docfx-assistant
 

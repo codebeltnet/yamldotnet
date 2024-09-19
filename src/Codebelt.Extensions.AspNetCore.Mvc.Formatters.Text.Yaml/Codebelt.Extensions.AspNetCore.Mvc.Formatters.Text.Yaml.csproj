@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+    <ProjectGuid>bbe72c69-e0d0-4c9b-bb8d-3dd2c410dcba</ProjectGuid>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <Description>The Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace contains types and extension methods that complements the Cuemon.Extensions.AspNetCore.Mvc namespace while being an addition to the Microsoft.AspNetCore.Mvc namespace. Provides YAML formatters for ASP.NET Core MVC based on YamlDotNet.</Description>
+    <PackageTags>extension-methods extensions yaml-converters add-yaml-serialization-formatters add-yaml-formatter-options</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cuemon.AspNetCore.Mvc" Version="8.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Codebelt.Extensions.AspNetCore.Text.Yaml\Codebelt.Extensions.AspNetCore.Text.Yaml.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -186,7 +186,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
                                   Parameter name: argument
                                   Actual value was 5 > 1.
                               stack:
-                              - at Cuemon.Validator.ThrowIfGreaterThan[T](T x, T y, String paramName, String message) *
+                              - at Cuemon.Validator.ThrowIfGreaterThan[T](T x, T y, String paramName, String message)
                               - at Xunit.Assert.RecordException(Action testCode) *
                               rangeMessage: Specified argument was out of the range of valid values.
                               paramName: argument

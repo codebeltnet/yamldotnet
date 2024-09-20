@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+    <ProjectGuid>ada637c7-e123-4632-9ebd-b084e454c764</ProjectGuid>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    <Description>Provides a convenient set of API additions for building .NET projects based on the most matured YAML library; YamlDotNet.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml\Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.csproj" />
+    <ProjectReference Include="..\Codebelt.Extensions.AspNetCore.Text.Yaml\Codebelt.Extensions.AspNetCore.Text.Yaml.csproj" />
+    <ProjectReference Include="..\Codebelt.Extensions.YamlDotNet\Codebelt.Extensions.YamlDotNet.csproj" />
+  </ItemGroup>
+
+</Project>

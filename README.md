@@ -1,26 +1,30 @@
-![ClassLibrary1](.nuget/ClassLibrary1/icon.png)
+![Extensions for YamlDotNet API by Codebelt](.nuget/icon.png)
 
-# Repository template for .NET class library projects
+# Extensions for YamlDotNet API by Codebelt
 
-Template repository for .NET class library projects following [Microsoft Engineering Guidelines](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines) as well as Conventions, Idioms and Patterns by [Codebelt](https://github.com/codebeltnet#conventions-idioms-and-patterns).
+[![YamlDotNet Ext. CI/CD Pipeline](https://github.com/codebeltnet/yamldotnet/actions/workflows/pipelines.yml/badge.svg)](https://github.com/codebeltnet/yamldotnet/actions/workflows/pipelines.yml) [![codecov](https://codecov.io/gh/codebeltnet/yamldotnet/graph/badge.svg?token=BN2UhFM3bb)](https://codecov.io/gh/codebeltnet/yamldotnet) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yamldotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=yamldotnet) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=yamldotnet&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=yamldotnet) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=yamldotnet&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=yamldotnet) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=yamldotnet&metric=security_rating)](https://sonarcloud.io/dashboard?id=yamldotnet)
 
-## 📦 Standalone Packages
+An open-source project (MIT license) that targets and complements the [YamlDotNet](https://github.com/aaubry/YamlDotNet) serializer engine. It aims to provide a uniform, convenient and even better developer experience when working with YAML.
 
-Provides a focused API for ...
+### 📦 Standalone Packages
 
-|Package|vNext|Stable|Downloads|
-|:--|:-:|:-:|:-:|
-| [ClassLibrary1](https://www.nuget.org/packages/ClassLibrary1/) | ![vNext](https://img.shields.io/nuget/vpre/ClassLibrary1?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/ClassLibrary1?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/ClassLibrary1?color=blueviolet&logo=nuget) |
-
-## 🏭 Productivity Packages
-
-Provides a convenient set of default API additions for ...
+Provides a focused API for YAML related operations.
 
 |Package|vNext|Stable|Downloads|
 |:--|:-:|:-:|:-:|
-| [ClassLibrary1.App](https://www.nuget.org/packages/ClassLibrary1.App/) | ![vNext](https://img.shields.io/nuget/vpre/ClassLibrary1.App?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/ClassLibrary1.App?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/ClassLibrary1.App?color=blueviolet&logo=nuget) |
+| [Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml](https://www.nuget.org/packages/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml/) | ![vNext](https://img.shields.io/nuget/vpre/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml?color=blueviolet&logo=nuget) |
+| [Codebelt.Extensions.AspNetCore.Text.Yaml](https://www.nuget.org/packages/Codebelt.Extensions.AspNetCore.Text.Yaml/) | ![vNext](https://img.shields.io/nuget/vpre/Codebelt.Extensions.AspNetCore.Text.Yaml?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/Codebelt.Extensions.AspNetCore.Text.Yaml?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/Codebelt.Extensions.AspNetCore.Text.Yaml?color=blueviolet&logo=nuget) |
+| [Codebelt.Extensions.YamlDotNet](https://www.nuget.org/packages/Codebelt.Extensions.YamlDotNet/) | ![vNext](https://img.shields.io/nuget/vpre/Codebelt.Extensions.YamlDotNet?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/Codebelt.Extensions.YamlDotNet?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/Codebelt.Extensions.YamlDotNet?color=blueviolet&logo=nuget) |
 
-### Contributing to `Extensions for xUnit API by Codebelt`
+### 🏭 Productivity Packages
+
+Provides a convenient set of default API additions YAML related operations.
+
+|Package|vNext|Stable|Downloads|
+|:--|:-:|:-:|:-:|
+| [Codebelt.Extensions.YamlDotNet.App](https://www.nuget.org/packages/Codebelt.Extensions.YamlDotNet.App/) | ![vNext](https://img.shields.io/nuget/vpre/Codebelt.Extensions.YamlDotNet.App?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/Codebelt.Extensions.YamlDotNet.App?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/Codebelt.Extensions.YamlDotNet.App?color=blueviolet&logo=nuget) |
+
+### Contributing to `Extensions for YamlDotNet API by Codebelt`
 Contributions are welcome! 
 Feel free to submit issues, feature requests, or pull requests to help improve this library.
 

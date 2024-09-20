@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.YamlDotNet</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Cuemon.Extensions.Globalization" Version="8.3.2" />
+    <PackageReference Include="Cuemon.Extensions.Core" Version="8.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.YamlDotNet\Codebelt.Extensions.YamlDotNet.csproj" />
+  </ItemGroup>
+
+</Project>

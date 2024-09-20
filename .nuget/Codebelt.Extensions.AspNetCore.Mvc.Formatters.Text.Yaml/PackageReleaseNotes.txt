@@ -1,0 +1,22 @@
+﻿Version 8.4.0
+Availability: .NET 8 and .NET 6
+ 
+# ALM
+- CHANGED Dependencies to latest and greatest with respect to TFMs
+ 
+Version 8.3.2
+Availability: .NET 8 and .NET 6
+ 
+# ALM
+- REMOVED Support for TFM .NET 7 (STS)
+ 
+Version 8.3.0
+Availability: .NET 8, .NET 7 and .NET 6
+ 
+# Improvements
+- CHANGED MvcBuilderExtensions class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to use Codebelt.Extensions.YamlDotNet assembly
+- CHANGED MvcCoreBuilderExtensions class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to use Codebelt.Extensions.YamlDotNet assembly
+- CHANGED YamlSerializationInputFormatter class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to use Codebelt.Extensions.YamlDotNet assembly
+- CHANGED YamlSerializationMvcOptionsSetup class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to use Codebelt.Extensions.YamlDotNet assembly
+- CHANGED YamlSerializationOutputFormatter class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to use Codebelt.Extensions.YamlDotNet assembly
+ 

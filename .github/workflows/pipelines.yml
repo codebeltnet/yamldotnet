@@ -129,6 +129,7 @@ jobs:
         with:
           configuration: ${{ matrix.configuration }}
           level: diagnostic
+          testArguments: -- RunConfiguration.DisableAppDomain=true
 
   # sonarcloud:
   #   name: 🔬 Code Quality Analysis

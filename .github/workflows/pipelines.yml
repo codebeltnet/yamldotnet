@@ -114,14 +114,20 @@ jobs:
         with:
           includePreview: true
 
+      - name: Download yamldotnet.snk file
+        uses: codebeltnet/gcp-download-file@v1
+        with:
+          serviceAccountKey: ${{ secrets.GCP_TOKEN }}
+          bucketName: ${{ secrets.GCP_BUCKETNAME }}
+          objectName: yamldotnet.snk
+
       - name: Install .NET Tool - Report Generator
         uses: codebeltnet/dotnet-tool-install-reportgenerator@v1
 
       - name: Test with ${{ matrix.configuration }} build
-        uses: codebeltnet/dotnet-test@v3.1.0
+        uses: codebeltnet/dotnet-test@v3
         with:
           configuration: ${{ matrix.configuration }}
-          buildSwitches: -p:SkipSignAssembly=true
           level: normal
 
   sonarcloud:

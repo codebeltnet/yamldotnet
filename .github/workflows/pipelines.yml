@@ -122,6 +122,7 @@ jobs:
         with:
           configuration: ${{ matrix.configuration }}
           buildSwitches: -p:SkipSignAssembly=true
+          level: normal
 
   sonarcloud:
     name: 🔬 Code Quality Analysis

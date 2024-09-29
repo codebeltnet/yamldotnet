@@ -114,12 +114,11 @@ jobs:
         with:
           includePreview: true
 
-      - name: Download yamldotnet.snk file
-        uses: codebeltnet/gcp-download-file@v1
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
         with:
-          serviceAccountKey: ${{ secrets.GCP_TOKEN }}
-          bucketName: ${{ secrets.GCP_BUCKETNAME }}
-          objectName: yamldotnet.snk
+          pattern: '*-${{ matrix.configuration }}'
+          merge-multiple: true
 
       - name: Install .NET Tool - Report Generator
         uses: codebeltnet/dotnet-tool-install-reportgenerator@v1
@@ -129,6 +128,7 @@ jobs:
         with:
           configuration: ${{ matrix.configuration }}
           level: normal
+          buildSwitches: --no-build
 
   sonarcloud:
     name: 🔬 Code Quality Analysis

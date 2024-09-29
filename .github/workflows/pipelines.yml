@@ -128,7 +128,7 @@ jobs:
         with:
           configuration: ${{ matrix.configuration }}
           level: normal
-          buildSwitches: --no-build
+          buildSwitches: --no-restore
 
   sonarcloud:
     name: 🔬 Code Quality Analysis

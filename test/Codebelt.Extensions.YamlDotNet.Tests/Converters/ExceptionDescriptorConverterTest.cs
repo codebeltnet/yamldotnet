@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Threading;
 using Codebelt.Extensions.Xunit;
+using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon.Diagnostics;
-using Cuemon.Extensions;
 using Cuemon.Extensions.IO;
-using Cuemon.Extensions.YamlDotNet.Formatters;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -29,7 +28,7 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
             catch (Exception ex)
             {
                 var sut = new ExceptionDescriptor(ex, "X900", "Critical Error.");
-                var formatter = new YamlFormatter(o => o.Settings.Converters.Add(new Cuemon.Extensions.YamlDotNet.Converters.ExceptionDescriptorConverter(io => io.SensitivityDetails = FaultSensitivityDetails.All)));
+                var formatter = new YamlFormatter(o => o.Settings.Converters.Add(new ExceptionDescriptorConverter(io => io.SensitivityDetails = FaultSensitivityDetails.All)));
                 var result = formatter.Serialize(sut).ToEncodedString();
 
                 TestOutput.WriteLine(result);

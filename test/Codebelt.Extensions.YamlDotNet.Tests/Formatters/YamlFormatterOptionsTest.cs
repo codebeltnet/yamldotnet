@@ -19,7 +19,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
         [Fact]
         public void YamlFormatterOptions_SettingsIsNull_ShouldThrowInvalidOperationException()
         {
-            var sut1 = new Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatterOptions()
+            var sut1 = new YamlFormatterOptions()
             {
                 Settings = null
             };
@@ -35,7 +35,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
         [Fact]
         public void YamlFormatterOptions_SupportedMediaTypesIsNull_ShouldThrowInvalidOperationException()
         {
-            var sut1 = new Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatterOptions()
+            var sut1 = new YamlFormatterOptions()
             {
                 SupportedMediaTypes = null
             };
@@ -51,7 +51,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
         [Fact]
         public void YamlFormatterOptions_ShouldHaveDefaultValues()
         {
-            var sut = new Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatterOptions();
+            var sut = new YamlFormatterOptions();
             var sutType = sut.GetType();
 
             Assert.NotNull(sut.Settings);
@@ -60,7 +60,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
             Assert.Equal(EncodingOptions.DefaultPreambleSequence, sut.Preamble);
             Assert.Equal(FaultSensitivityDetails.None, sut.SensitivityDetails);
             Assert.True(sut.Settings.Converters.Count == 0, "sut.Settings.Converters.Count == 0");
-            Assert.Equal(Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatterOptions.DefaultMediaType, sut.SupportedMediaTypes.First());
+            Assert.Equal(YamlFormatterOptions.DefaultMediaType, sut.SupportedMediaTypes.First());
 
             sutType.GetMethod("RefreshWithConverterDependencies", MemberReflection.Everything)!.Invoke(sut, null);
 

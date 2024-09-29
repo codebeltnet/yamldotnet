@@ -4,13 +4,13 @@
     <RootNamespace>Codebelt.Extensions.YamlDotNet</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net48'))">
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Cuemon.Extensions.Globalization" Version="8.3.2" />
-    <PackageReference Include="Cuemon.Extensions.Core" Version="8.3.2" />
+    <PackageReference Include="Cuemon.Extensions.Globalization" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.Extensions.Core" Version="9.0.0-preview.9" />
   </ItemGroup>
 
   <ItemGroup>

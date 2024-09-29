@@ -24,6 +24,7 @@
   <!-- However, dotnet test works fine - simply producing a MSB3277 due to the fact that this project is in conflict with one of the SUT that relies on the NuGet equivalent to this project. -->
   <!-- Since assembly redirects is not supported in .NET, this was the workaround that has the least impact (normally this is applied only in CI/CD pipeline).  -->
   <PropertyGroup>
+    <MinVerMinimumMajorMinor>8.0</MinVerMinimumMajorMinor>
     <MinVerTagPrefix>v</MinVerTagPrefix>
   </PropertyGroup>
 

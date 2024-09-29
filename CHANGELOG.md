@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
 > [!NOTE]  
-> Changelog entries prior to version 8.4.0 was migrated from previous versions of Cuemon.Extensions.YamlDotNet, Cuemon.Extensions.AspNetCore, Cuemon.Extensions.AspNetCore.Mvc and Cuemon.Extensions.Diagnostics.
+> Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
 ## [9.0.0] - TBD
 
@@ -17,7 +17,6 @@ This major release is first and foremost focused on ironing out any wrinkles tha
 
 - YamlFormatter class in the Codebelt.Extensions.YamlDotNet.Formatters namespace to now supports excluding non-essential properties from serialization
 - YamlFormatter class in the Codebelt.Extensions.YamlDotNet.Formatters namespace now provides full control of YAML deserialization using an action delegate factory (IDeserializer, Parser)
-
 
 ## [8.3.2] - 2024-08-04
 

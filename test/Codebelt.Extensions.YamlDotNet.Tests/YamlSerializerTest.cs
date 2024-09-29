@@ -2,11 +2,11 @@
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
-using Cuemon.Extensions.Globalization;
 using Cuemon.Extensions.IO;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon.Extensions;
+using Cuemon.Extensions.Globalization;
 using Xunit;
 using Xunit.Abstractions;
 using YamlDotNet.Core;
@@ -15,10 +15,18 @@ namespace Codebelt.Extensions.YamlDotNet
 {
     public class YamlSerializerTest : Test
     {
-        private readonly CultureInfo _cultureInfo = new CultureInfo("da-DK").UseNationalLanguageSupport(); // from .NET6+ this is needed for both Windows and Linux; at least from pipeline (worked locally for Windows without Merge ...)
+        private readonly CultureInfo _cultureInfo;
 
         public YamlSerializerTest(ITestOutputHelper output) : base(output)
         {
+            try
+            {
+                _cultureInfo = new CultureInfo("da-DK").UseNationalLanguageSupport(); // from .NET6+ this is needed for both Windows and Linux; at least from pipeline (worked locally for Windows without Merge ...)
+            }
+            catch (Exception e)
+            {
+                TestOutput.WriteLine(e.ToString());
+            }
         }
 
         [Fact]

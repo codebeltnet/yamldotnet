@@ -1,6 +1,6 @@
 # NuGet Packages
 
-This is a list of all NuGet packages from **ClassLibrary1** that is publicly available on [NuGet.org](https://www.nuget.org/packages?q=ClassLibrary1); the packages here are listed alphabetically and are available in preview-, rc- and production-ready versions.
+This is a list of all NuGet packages from **Extensions for YamlDotNet API by Codebelt** that is publicly available on [NuGet.org](https://www.nuget.org/packages?q=Codebelt.Extensions); the packages here are listed alphabetically and are available in preview-, rc- and production-ready versions.
 
 ## 📦 Standalone Packages
 

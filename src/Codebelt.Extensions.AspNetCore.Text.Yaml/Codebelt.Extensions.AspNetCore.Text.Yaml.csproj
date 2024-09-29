@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net9.0;net8.0</TargetFrameworks>
     <ProjectGuid>a3abfcd1-d4a6-4fa5-bb5a-758ac340a527</ProjectGuid>
   </PropertyGroup>
 
@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cuemon.AspNetCore" Version="8.3.2" />
-    <PackageReference Include="Cuemon.Extensions.DependencyInjection" Version="8.3.2" />
+    <PackageReference Include="Cuemon.AspNetCore" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.Extensions.DependencyInjection" Version="9.0.0-preview.9" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net9.0;net8.0</TargetFrameworks>
     <RootNamespace>Codebelt.Extensions.AspNetCore.Text.Yaml</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cuemon.Extensions.AspNetCore.Authentication" Version="8.3.2" />
-    <PackageReference Include="Cuemon.Extensions.AspNetCore" Version="8.3.2" />
-    <PackageReference Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="8.4.1" />
+    <PackageReference Include="Cuemon.Extensions.AspNetCore.Authentication" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.Extensions.AspNetCore" Version="9.0.0-preview.9" />
+    <PackageReference Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="9.0.0-preview.4" />
   </ItemGroup>
 
   <ItemGroup>

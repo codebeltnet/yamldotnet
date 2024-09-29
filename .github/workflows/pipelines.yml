@@ -125,7 +125,7 @@ jobs:
         uses: codebeltnet/dotnet-tool-install-reportgenerator@v1
 
       - name: Test with ${{ matrix.configuration }} build
-        uses: codebeltnet/dotnet-test@v3
+        uses: codebeltnet/dotnet-test@v3.1.0
         with:
           configuration: ${{ matrix.configuration }}
           level: normal

@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cuemon.Extensions.IO" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.Extensions.IO" Version="9.0.0-preview.9" PrivateAssets="compile" />
     <PackageReference Include="YamlDotNet" Version="16.1.3" />
   </ItemGroup>
 

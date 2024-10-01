@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cuemon.AspNetCore" Version="9.0.0-preview.9" />
-    <PackageReference Include="Cuemon.Extensions.DependencyInjection" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.AspNetCore" Version="9.0.0-preview.9" PrivateAssets="compile" />
+    <PackageReference Include="Cuemon.Extensions.DependencyInjection" Version="9.0.0-preview.9" PrivateAssets="compile" />
   </ItemGroup>
 
   <ItemGroup>

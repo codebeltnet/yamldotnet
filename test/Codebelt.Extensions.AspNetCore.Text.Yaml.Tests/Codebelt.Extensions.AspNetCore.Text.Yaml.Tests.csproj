@@ -8,7 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Cuemon.Extensions.AspNetCore.Authentication" Version="9.0.0-preview.9" />
     <PackageReference Include="Cuemon.Extensions.AspNetCore" Version="9.0.0-preview.9" />
-    <PackageReference Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="9.0.0-preview.4" />
+    <PackageReference Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="9.0.0-preview.6" />
   </ItemGroup>
 
   <ItemGroup>

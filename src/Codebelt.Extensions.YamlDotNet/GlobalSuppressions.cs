@@ -5,5 +5,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatter.Serialize(System.Object,System.Type)~System.IO.Stream")]
-[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Cuemon.Extensions.YamlDotNet.Formatters.YamlFormatter.Deserialize(System.IO.Stream,System.Type)~System.Object")]
+[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.Serialize(System.Object,System.Type)~System.IO.Stream")]
+[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.Deserialize(System.IO.Stream,System.Type)~System.Object")]
+[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.UseDeserializerBuilder~YamlDotNet.Serialization.DeserializerBuilder")]
+[assembly: SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "By design.", Scope = "member", Target = "~M:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.UseSerializerBuilder~YamlDotNet.Serialization.SerializerBuilder")]

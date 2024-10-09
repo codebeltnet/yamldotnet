@@ -9,8 +9,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Cuemon.Extensions.Globalization" Version="9.0.0-preview.9" />
-    <PackageReference Include="Cuemon.Extensions.Core" Version="9.0.0-preview.9" />
+    <PackageReference Include="Cuemon.Extensions.Globalization" Version="9.0.0-preview.11" />
+    <PackageReference Include="Cuemon.Extensions.Core" Version="9.0.0-preview.11" />
   </ItemGroup>
 
   <ItemGroup>

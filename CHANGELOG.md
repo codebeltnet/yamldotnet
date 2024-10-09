@@ -11,6 +11,10 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 
 This major release is first and foremost focused on ironing out any wrinkles that have been introduced with .NET 9 preview releases so the final release is production ready together with the official launch from Microsoft.
 
+### Changed
+
+- YamlFormatterOptions class in the Codebelt.Extensions.YamlDotNet.Formatters namespace to use `camelCase` naming convention instead of `PascalCase`
+
 ## [8.4.0] - 2024-09-20
 
 ### Changed

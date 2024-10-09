@@ -8,6 +8,7 @@ using Cuemon.Configuration;
 using Cuemon.Diagnostics;
 using Cuemon.Net.Http;
 using Cuemon.Text;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Formatters
 {
@@ -62,7 +63,10 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
         /// </remarks>
         public YamlFormatterOptions()
         {
-            Settings = new YamlSerializerOptions();
+            Settings = new YamlSerializerOptions()
+            {
+                NamingConvention = CamelCaseNamingConvention.Instance
+            };
             DefaultConverters?.Invoke(Settings.Converters);
             SensitivityDetails = FaultSensitivityDetails.None;
             SupportedMediaTypes = new List<MediaTypeHeaderValue>()

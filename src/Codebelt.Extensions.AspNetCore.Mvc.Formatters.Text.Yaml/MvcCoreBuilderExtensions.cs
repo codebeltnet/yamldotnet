@@ -46,7 +46,7 @@ namespace Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml
         {
             Validator.ThrowIfNull(builder);
             builder.Services.AddYamlFormatterOptions(setup);
-            builder.Services.AddYamlExceptionResponseFormatter();
+            builder.Services.AddYamlExceptionResponseFormatter(setup);
             return builder;
         }
     }

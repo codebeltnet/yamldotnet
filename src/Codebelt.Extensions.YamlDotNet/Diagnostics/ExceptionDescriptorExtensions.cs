@@ -1,7 +1,6 @@
 ﻿using System;
 using Cuemon.Diagnostics;
 using Cuemon.Extensions.IO;
-using Codebelt.Extensions.YamlDotNet.Converters;
 using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon;
 
@@ -18,10 +17,11 @@ namespace Codebelt.Extensions.YamlDotNet.Diagnostics
         /// <param name="descriptor">The <see cref="ExceptionDescriptor"/> to extend.</param>
         /// <param name="setup">The <see cref="ExceptionDescriptorOptions"/> which may be configured.</param>
         /// <returns>A string that represents the specified <paramref name="descriptor"/>.</returns>
-        public static string ToYaml(this ExceptionDescriptor descriptor, Action<ExceptionDescriptorOptions> setup = null)
+        public static string ToYaml(this ExceptionDescriptor descriptor, Action<YamlFormatterOptions> setup = null)
         {
             Validator.ThrowIfNull(descriptor);
-            var formatter = new YamlFormatter(o => o.Settings.Converters.Add(new ExceptionDescriptorConverter(setup)));
+            Validator.ThrowIfInvalidConfigurator(setup, out var options);
+            var formatter = new YamlFormatter(options);
             return formatter.Serialize(descriptor).ToEncodedString();
         }
     }

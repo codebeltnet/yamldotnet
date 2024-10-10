@@ -68,8 +68,8 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
         {
             var exceptionType = value.GetType();
             writer.WriteStartObject();
-            writer.WriteString(SetPropertyName("Type"), exceptionType.FullName);
-            WriteExceptionCore(writer, value, IncludeStackTrace, IncludeData, FormatterOptions);
+            writer.WriteString(Formatter.Options.SetPropertyName("Type"), exceptionType.FullName);
+            WriteExceptionCore(writer, value, IncludeStackTrace, IncludeData, Formatter.Options);
             writer.WriteEndObject();
         }
 

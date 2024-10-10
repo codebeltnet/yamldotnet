@@ -6,6 +6,7 @@ using Cuemon.Diagnostics;
 using Cuemon.Extensions.IO;
 using Xunit;
 using Xunit.Abstractions;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Converters
 {
@@ -28,7 +29,11 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
             catch (Exception ex)
             {
                 var sut = new ExceptionDescriptor(ex, "X900", "Critical Error.");
-                var formatter = new YamlFormatter(o => o.Settings.Converters.Add(new ExceptionDescriptorConverter(io => io.SensitivityDetails = FaultSensitivityDetails.All)));
+                var formatter = new YamlFormatter(o =>
+                {
+                    o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
+                    o.Settings.Converters.Add(new ExceptionDescriptorConverter(io => io.SensitivityDetails = FaultSensitivityDetails.All));
+                });
                 var result = formatter.Serialize(sut).ToEncodedString();
 
                 TestOutput.WriteLine(result);

@@ -5,6 +5,11 @@ Availability: .NET 9 and .NET 8
 - CHANGED Dependencies to latest and greatest with respect to TFMs
 - REMOVED Support for TFM .NET 6 (LTS)
  
+# New Features
+- EXTENDED YamlConverterExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Converters namespace with a new extension method for the IServiceCollection interface: AddProblemDetailsConverter
+- CHANGED AddHttpExceptionDescriptorConverter method on the YamlConverterExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Converters namespace to support Instance (Uri) and TraceId (string)
+- CHANGED AddYamlExceptionResponseFormatter method on the ServiceCollectionExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters namespace to support ProblemDetails
+ 
 Version 8.4.0
 Availability: .NET 8 and .NET 6
  

@@ -17,6 +17,11 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters
     /// </summary>
     public static class ServiceCollectionExtensions
     {
+        static ServiceCollectionExtensions()
+        {
+            Bootstrapper.Initialize();
+        }
+
         /// <summary>
         /// Adds configuration of <see cref="YamlFormatterOptions"/> for the application.
         /// </summary>
@@ -30,7 +35,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters
         {
             Validator.ThrowIfNull(services);
             Validator.ThrowIfInvalidConfigurator(setup, out var options);
-            services.TryConfigure(setup ?? (o =>
+            services.Configure(setup ?? (o =>
             {
                 o.Settings = options.Settings;
                 o.SensitivityDetails = options.SensitivityDetails;
@@ -56,9 +61,10 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters
             services.TryAddSingleton(provider =>
             {
                 var options = provider.GetService<IOptions<YamlFormatterOptions>>().Value;
+                var faultDescriptorOptions = provider.GetRequiredService<IOptions<FaultDescriptorOptions>>().Value;
                 return new HttpExceptionDescriptorResponseFormatter<YamlFormatterOptions>(options)
                     .Adjust(o => o.Settings.Converters.AddHttpExceptionDescriptorConverter(edo => edo.SensitivityDetails = o.SensitivityDetails))
-                    .Populate((descriptor, contentType) => new StreamContent(YamlFormatter.SerializeObject(descriptor, options))
+                    .Populate((descriptor, contentType) => new StreamContent(YamlFormatter.SerializeObject(faultDescriptorOptions.FaultDescriptor == PreferredFaultDescriptor.FaultDetails ? descriptor : Decorator.Enclose(descriptor).ToProblemDetails(options.SensitivityDetails) , options))
                     {
                         Headers = { { HttpHeaderNames.ContentType, contentType.MediaType } }
                     });

@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using Xunit;
 using Xunit.Abstractions;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.AspNetCore.Text.Yaml
 {
@@ -31,7 +32,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml
         {
             using (var startup = WebHostTestFactory.Create(services =>
                    {
-                       services.AddYamlExceptionResponseFormatter();
+                       services.AddYamlExceptionResponseFormatter(o => o.Settings.NamingConvention = PascalCaseNamingConvention.Instance);
                        services.AddAuthorizationResponseHandler();
                        services.AddAuthentication(BasicAuthorizationHeader.Scheme)
                            .AddBasic(o =>

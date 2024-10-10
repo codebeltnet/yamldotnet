@@ -7,6 +7,7 @@ using Cuemon;
 using Cuemon.Extensions;
 using Xunit;
 using Xunit.Abstractions;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Diagnostics
 {
@@ -36,6 +37,7 @@ namespace Codebelt.Extensions.YamlDotNet.Diagnostics
             var sut2 = sut1.ToYaml(o =>
             {
                 o.SensitivityDetails = FaultSensitivityDetails.All;
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
             });
 
             TestOutput.WriteLine(sut2);
@@ -82,7 +84,11 @@ namespace Codebelt.Extensions.YamlDotNet.Diagnostics
             }
 
             var sut1 = ExceptionDescriptor.Extract(ime);
-            var sut2 = sut1.ToYaml(Patterns.ConfigureRevert(options));
+            var sut2 = sut1.ToYaml(o =>
+            {
+                o.SensitivityDetails = options.SensitivityDetails;
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
+            });
 
             TestOutput.WriteLine(sut2);
 

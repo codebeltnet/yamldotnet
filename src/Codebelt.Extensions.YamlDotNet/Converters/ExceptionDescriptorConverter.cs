@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon;
 using Cuemon.Diagnostics;
 using YamlDotNet.Core;
@@ -20,7 +21,8 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
         /// <param name="setup">The <see cref="ExceptionDescriptorOptions"/> which may be configured.</param>
         public ExceptionDescriptorConverter(Action<ExceptionDescriptorOptions> setup = null)
         {
-            _options = Patterns.Configure(setup);
+            Validator.ThrowIfInvalidConfigurator(setup, out var options);
+            _options = options;
         }
 
         /// <summary>
@@ -31,21 +33,21 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
         public override void WriteYaml(IEmitter writer, ExceptionDescriptor value)
         {
             writer.WriteStartObject();
-            writer.WritePropertyName(SetPropertyName("Error"));
+            writer.WritePropertyName(Formatter.Options.SetPropertyName("Error"));
 
             writer.WriteStartObject();
-            writer.WriteString(SetPropertyName("Code"), value.Code);
-            writer.WriteString(SetPropertyName("Message"), value.Message);
+            writer.WriteString(Formatter.Options.SetPropertyName("Code"), value.Code);
+            writer.WriteString(Formatter.Options.SetPropertyName("Message"), value.Message);
             if (value.HelpLink != null)
             {
-                writer.WriteString(SetPropertyName("HelpLink"), value.HelpLink.OriginalString);
+                writer.WriteString(Formatter.Options.SetPropertyName("HelpLink"), value.HelpLink.OriginalString);
             }
             if (_options.SensitivityDetails.HasFlag(FaultSensitivityDetails.Failure))
             {
-                writer.WritePropertyName(SetPropertyName("Failure"));
+                writer.WritePropertyName(Formatter.Options.SetPropertyName("Failure"));
                 new ExceptionConverter(_options.SensitivityDetails.HasFlag(FaultSensitivityDetails.StackTrace), _options.SensitivityDetails.HasFlag(FaultSensitivityDetails.Data))
                 {
-                    FormatterOptions = FormatterOptions
+                    Formatter = Formatter
                 }.WriteYaml(writer, value.Failure);
 
             }
@@ -53,12 +55,12 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
 
             if (_options.SensitivityDetails.HasFlag(FaultSensitivityDetails.Evidence) && value.Evidence.Any())
             {
-                writer.WritePropertyName(SetPropertyName("Evidence"));
+                writer.WritePropertyName(Formatter.Options.SetPropertyName("Evidence"));
                 writer.WriteStartObject();
                 foreach (var evidence in value.Evidence)
                 {
-                    writer.WritePropertyName(evidence.Key);
-                    writer.WriteObject(evidence.Value, FormatterOptions);
+                    writer.WritePropertyName(Formatter.Options.SetPropertyName(evidence.Key));
+                    writer.WriteObject(evidence.Value, Formatter.Options);
                 }
                 writer.WriteEndObject();
             }

@@ -59,12 +59,12 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
             Assert.Equal(EncodingOptions.DefaultEncoding, sut.Encoding);
             Assert.Equal(EncodingOptions.DefaultPreambleSequence, sut.Preamble);
             Assert.Equal(FaultSensitivityDetails.None, sut.SensitivityDetails);
-            Assert.True(sut.Settings.Converters.Count == 0, "sut.Settings.Converters.Count == 0");
+            Assert.True(sut.Settings.Converters.Count == 1, "sut.Settings.Converters.Count == 1");
             Assert.Equal(YamlFormatterOptions.DefaultMediaType, sut.SupportedMediaTypes.First());
 
             sutType.GetMethod("RefreshWithConverterDependencies", MemberReflection.Everything)!.Invoke(sut, null);
 
-            Assert.True(sut.Settings.Converters.Count == 2, "sut.Settings.Converters.Count == 2");
+            Assert.True(sut.Settings.Converters.Count == 3, "sut.Settings.Converters.Count == 3");
         }
     }
 }

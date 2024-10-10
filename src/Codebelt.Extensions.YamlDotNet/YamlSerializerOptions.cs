@@ -90,7 +90,7 @@ namespace Codebelt.Extensions.YamlDotNet
             ReflectionRules = new MemberReflection(true, true);
             WhiteSpaceIndentation = 2;
             UseAliases = false;
-            NamingConvention = NullNamingConvention.Instance;
+            NamingConvention = CamelCaseNamingConvention.Instance;
             EnumNamingConvention = NullNamingConvention.Instance;
             MaximumRecursion = 25;
             NewLine = Environment.NewLine;
@@ -98,7 +98,7 @@ namespace Codebelt.Extensions.YamlDotNet
             FormatProvider = CultureInfo.InvariantCulture;
             IndentSequences = true;
             TextWidth = int.MaxValue;
-            ValuesHandling = DefaultValuesHandling.Preserve;
+            ValuesHandling = DefaultValuesHandling.OmitNull;
             EnsureRoundtrip = false;
         }
 

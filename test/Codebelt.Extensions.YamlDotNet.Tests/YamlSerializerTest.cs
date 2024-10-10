@@ -10,6 +10,7 @@ using Cuemon.Extensions.Globalization;
 using Xunit;
 using Xunit.Abstractions;
 using YamlDotNet.Core;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet
 {
@@ -35,10 +36,11 @@ namespace Codebelt.Extensions.YamlDotNet
             var sut2 = _cultureInfo;
             var sut3 = YamlFormatter.SerializeObject(sut2.DateTimeFormat, o =>
             {
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
                 o.Settings.ScalarStyle = ScalarStyle.Plain;
                 o.Settings.IndentSequences = false;
                 o.Settings.FormatProvider = _cultureInfo;
-                o.Settings.Converters.Add(YamlConverterFactory.Create<DateTime>((writer, dt) => writer.WriteValue(dt.ToString(_cultureInfo))));
+                o.Settings.Converters.Add(YamlConverterFactory.Create<DateTime>((writer, dt, _) => writer.WriteValue(dt.ToString(_cultureInfo))));
             });
             var sut4 = sut3.ToEncodedString();
 
@@ -180,6 +182,7 @@ MonthGenitiveNames:
                 o.Settings.ScalarStyle = ScalarStyle.DoubleQuoted;
                 o.Settings.IndentSequences = false;
                 o.Settings.FormatProvider = _cultureInfo;
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
             });
             var sut4 = sut3.ToEncodedString();
 
@@ -236,7 +239,8 @@ DigitSubstitution: ""None""
             var sut3 = YamlFormatter.SerializeObject(sut2, o =>
             {
                 o.Settings.IndentSequences = false;
-                o.Settings.Converters.Add(YamlConverterFactory.Create<DateTime>((writer, dt) => writer.WriteValue(dt.ToString(_cultureInfo))));
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
+                o.Settings.Converters.Add(YamlConverterFactory.Create<DateTime>((writer, dt, _) => writer.WriteValue(dt.ToString(_cultureInfo))));
             });
             var sut4 = sut3.ToEncodedString().ReplaceLineEndings().Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
 

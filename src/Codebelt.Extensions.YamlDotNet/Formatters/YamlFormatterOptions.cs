@@ -28,6 +28,11 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
             CharSet = "utf-8"
         };
 
+        static YamlFormatterOptions()
+        {
+            DefaultConverters = list => list.AddFailureConverter();
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="YamlFormatterOptions"/> class.
         /// </summary>

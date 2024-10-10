@@ -1,6 +1,4 @@
 ﻿using System;
-using Codebelt.Extensions.YamlDotNet.Formatters;
-using Cuemon;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 
@@ -23,21 +21,10 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
         public abstract bool CanConvert(Type typeToConvert);
 
         /// <summary>
-        /// Gets or sets the <see cref="YamlFormatterOptions"/> associated with this instance. Normally this is done from <see cref="Formatters.YamlFormatter"/>
+        /// Gets or sets the <see cref="Formatters.YamlFormatter"/> associated with this instance.
         /// </summary>
-        /// <value>The <see cref="YamlFormatterOptions"/> associated with this instance.</value>
-        public YamlFormatterOptions FormatterOptions { get; set; }
-
-        /// <summary>
-        /// Returns the specified <paramref name="name"/> adhering to the underlying <see cref="YamlSerializerOptions.NamingConvention"/> policy on <see cref="FormatterOptions"/>.
-        /// </summary>
-        /// <param name="name">The name of the property.</param>
-        /// <returns>If <see cref="FormatterOptions"/> is null, the specified <paramref name="name"/> is returned unaltered; otherwise it is converted according to the <see cref="YamlSerializerOptions.NamingConvention"/>.</returns>
-        public string SetPropertyName(string name)
-        {
-            Validator.ThrowIfNull(name);
-            return FormatterOptions?.Settings.NamingConvention.Apply(name) ?? name;
-        }
+        /// <value>The <see cref="Formatters.YamlFormatter"/> associated with this instance.</value>
+        public Formatters.YamlFormatter Formatter { get; set; }
 
         bool IYamlTypeConverter.Accepts(Type type)
         {

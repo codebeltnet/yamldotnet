@@ -127,7 +127,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
 
             foreach (var converter in Options.Settings.Converters)
             {
-                if (converter is YamlConverter yamlConverter) { yamlConverter.FormatterOptions = Options; }
+                if (converter is YamlConverter yamlConverter) { yamlConverter.Formatter = this; }
                 builder.WithTypeConverter(converter);
             }
 
@@ -196,7 +196,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
 
             foreach (var converter in Options.Settings.Converters)
             {
-                if (converter is YamlConverter yamlConverter) { yamlConverter.FormatterOptions = Options; }
+                if (converter is YamlConverter yamlConverter) { yamlConverter.Formatter = this; }
                 builder.WithTypeConverter(converter);
             }
 

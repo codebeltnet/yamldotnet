@@ -11,11 +11,25 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 
 This major release is first and foremost focused on ironing out any wrinkles that have been introduced with .NET 9 preview releases so the final release is production ready together with the official launch from Microsoft.
 
+### Added
+
+- YamlConverterExtensions class in the Codebelt.Extensions.YamlDotNet.Converters namespace that consist of one extension method for the ICollection{YamlConverter} interface: `AddFailureConverter`
+- YamlConverterExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Converters namespace received a new extension method for the IServiceCollection interface: `AddProblemDetailsConverter`
+
 ### Changed
 
-- YamlFormatterOptions class in the Codebelt.Extensions.YamlDotNet.Formatters namespace to use `camelCase` naming convention instead of `PascalCase`
+- YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace to use `camelCase` naming convention instead of `PascalCase` and omit null values by default
+- ToYaml method on the ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagnostics namespace to have a signature of `Action{YamlFormatterOptions}` (breaking change)
+- YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace to include a `YamlFormatter` parameter in all factory methods (breaking change)
+- YamlConverter class in the Codebelt.Extensions.YamlDotNet.Converters namespace to expose a YamlFormatter property (`Formatter`) instead of a YamlFormatterOptions (FormatterOptions) property (breaking change)
+- AddHttpExceptionDescriptorConverter method on the YamlConverterExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Converters namespace to support `Instance` (Uri) and `TraceId` (string)
+- AddYamlExceptionResponseFormatter method on the ServiceCollectionExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters namespace to support `ProblemDetails`
 
 ## [8.4.0] - 2024-09-20
+
+### Added
+
+ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagnostics namespace that converts an ExceptionDescriptor to YAML
 
 ### Changed
 

@@ -6,7 +6,15 @@ Availability: .NET 9, .NET 8 and .NET Standard 2.0
 - REMOVED Support for TFM .NET 6 (LTS)
  
 # Breaking Changes
-- CHANGED YamlFormatterOptions class in the Codebelt.Extensions.YamlDotNet.Formatters namespace use camelCase naming convention instead of PascalCase
+- CHANGED ToYaml method on the ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagnostics namespace to have a signature of Action{YamlFormatterOptions}
+- CHANGED YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace to include a YamlFormatter parameter in all factory methods
+- CHANGED YamlConverter class in the Codebelt.Extensions.YamlDotNet.Converters namespace to expose a YamlFormatter property instead of a YamlFormatterOptions property
+ 
+# New Features
+- ADDED YamlConverterExtensions class in the Codebelt.Extensions.YamlDotNet.Converters namespace that consist of one extension method for the ICollection{YamlConverter} interface: AddFailureConverter
+ 
+# Improvements
+- CHANGED YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace to use camelCase naming convention instead of PascalCase and omit null values by default
  
 Version 8.4.0
 Availability: .NET 8, .NET 6 and .NET Standard 2.0
@@ -17,6 +25,7 @@ Availability: .NET 8, .NET 6 and .NET Standard 2.0
 # New Features
 - EXTENDED YamlFormatter class in the Codebelt.Extensions.YamlDotNet.Formatters namespace to support excluding non-essential properties from serialization
 - EXTENDED YamlFormatter class in the Codebelt.Extensions.YamlDotNet.Formatters namespace to provide full control of YAML deserialization using an action delegate factory (IDeserializer, Parser)
+- ADDED ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagnostics namespace that converts an ExceptionDescriptor to YAML
  
 Version 8.3.2
 Availability: .NET 8, .NET 6 and .NET Standard 2.0

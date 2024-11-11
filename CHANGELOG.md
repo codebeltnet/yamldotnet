@@ -7,7 +7,7 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [9.0.0] - TBD
+## [9.0.0] - 2024-11-13
 
 This major release is first and foremost focused on ironing out any wrinkles that have been introduced with .NET 9 preview releases so the final release is production ready together with the official launch from Microsoft.
 
@@ -24,6 +24,11 @@ This major release is first and foremost focused on ironing out any wrinkles tha
 - YamlConverter class in the Codebelt.Extensions.YamlDotNet.Converters namespace to expose a YamlFormatter property (`Formatter`) instead of a YamlFormatterOptions (FormatterOptions) property (breaking change)
 - AddHttpExceptionDescriptorConverter method on the YamlConverterExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Converters namespace to support `Instance` (Uri) and `TraceId` (string)
 - AddYamlExceptionResponseFormatter method on the ServiceCollectionExtensions class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters namespace to support `ProblemDetails`
+
+### Fixed
+
+- AddYamlFormattersOptions method on the MvcBuilderExtensions class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to pass setup delegate to AddYamlExceptionResponseFormatter
+- AddYamlFormattersOptions method on the MvcCoreBuilderExtensions class in the Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml namespace to pass setup delegate to AddYamlExceptionResponseFormatter
 
 ## [8.4.0] - 2024-09-20
 

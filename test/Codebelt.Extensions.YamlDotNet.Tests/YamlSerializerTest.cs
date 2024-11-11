@@ -155,8 +155,6 @@ MonthGenitiveNames:
 
 #if NET8_0_OR_GREATER
             expected = string.Format(expected, "2049");
-#elif NET6_0_OR_GREATER
-            expected = string.Format(expected, "2029");
 #elif NET48_OR_GREATER
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {

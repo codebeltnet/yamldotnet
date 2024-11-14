@@ -7,10 +7,6 @@
   <ItemGroup Condition="$(TargetFramework.StartsWith('net48'))">
     <PackageReference Include="System.Net.Http" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="YamlSerializerTest.cs" />
-  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Cuemon.Extensions.Core" />

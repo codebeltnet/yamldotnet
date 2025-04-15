@@ -164,7 +164,7 @@ jobs:
     if: github.event_name != 'pull_request'
     name: call-nuget
     needs: [build,pack,test,sonarcloud,codecov,codeql]
-    uses: codebeltnet/jobs-nuget/.github/workflows/default.yml@release/v1
+    uses: codebeltnet/jobs-nuget/.github/workflows/default.yml@v1
     with:
       version: ${{ needs.build.outputs.version }}
       environment: Production

@@ -59,7 +59,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml
                        {
                            endpoints.MapGet("/", context => context.Response.WriteAsync($"Hello {context.User.Identity!.Name}"));
                        });
-                   }, hostFixture: null))
+                   }))
             {
                 var client = startup.Host.GetTestClient();
                 var bb = new BasicAuthorizationHeaderBuilder()

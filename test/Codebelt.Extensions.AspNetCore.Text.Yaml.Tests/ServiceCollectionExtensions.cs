@@ -66,7 +66,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml
                 {
                     client.DefaultRequestHeaders.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/yaml"));
                     return client.GetAsync("/");
-                }, hostFixture: null);
+                });
 
             var body = await response.Content.ReadAsStringAsync();
 
@@ -295,7 +295,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml
                 {
                     client.DefaultRequestHeaders.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/yaml"));
                     return client.GetAsync("/");
-                }, hostFixture: null);
+                });
 
             var body = await response.Content.ReadAsStringAsync();
 

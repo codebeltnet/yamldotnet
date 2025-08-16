@@ -3,16 +3,16 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="10.0.4" />
-    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="10.0.4" />
-    <PackageVersion Include="Cuemon.AspNetCore" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.Core" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.IO" Version="9.0.7" />
-    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="9.0.7" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="10.0.5" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="10.0.5" />
+    <PackageVersion Include="Cuemon.AspNetCore" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.Core" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.IO" Version="9.0.8" />
+    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="9.0.8" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="MinVer" Version="6.0.0" />
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
@@ -21,6 +21,6 @@
     <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.console" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
   </ItemGroup>
 </Project>

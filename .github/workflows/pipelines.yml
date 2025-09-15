@@ -60,7 +60,8 @@ jobs:
       runs-on: ${{ matrix.os }}
       test-arguments: -- RunConfiguration.DisableAppDomain=true
       build-switches: -p:SkipSignAssembly=true
-      restore: true
+      restore: true # net48 requires packages to be restored
+      build: true # net48 requires projects to be built
 
   sonarcloud:
     name: call-sonarcloud

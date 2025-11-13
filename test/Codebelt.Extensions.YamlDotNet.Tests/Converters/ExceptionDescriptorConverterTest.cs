@@ -5,7 +5,6 @@ using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon.Diagnostics;
 using Cuemon.Extensions.IO;
 using Xunit;
-using Xunit.Abstractions;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Converters

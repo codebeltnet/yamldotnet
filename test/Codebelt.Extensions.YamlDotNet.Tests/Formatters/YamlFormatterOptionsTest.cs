@@ -6,7 +6,6 @@ using Cuemon.Diagnostics;
 using Cuemon.Reflection;
 using Cuemon.Text;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Codebelt.Extensions.YamlDotNet.Formatters
 {

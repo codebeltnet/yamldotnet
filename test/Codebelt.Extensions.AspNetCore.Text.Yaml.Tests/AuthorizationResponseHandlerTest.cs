@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Threading.Tasks;
 using Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
@@ -13,7 +14,6 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using Xunit;
-using Xunit.Abstractions;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.AspNetCore.Text.Yaml
@@ -28,7 +28,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml
         [Theory]
         [InlineData(FaultSensitivityDetails.All)]
         [InlineData(FaultSensitivityDetails.None)]
-        public async void AuthorizationResponseHandler_BasicScheme_ShouldRenderResponseInYaml_UsingAspNetBootstrapping(FaultSensitivityDetails sensitivityDetails) // # legacy test from  Cuemon.Extensions.AspNetCore.Authentication
+        public async Task AuthorizationResponseHandler_BasicScheme_ShouldRenderResponseInYaml_UsingAspNetBootstrapping(FaultSensitivityDetails sensitivityDetails) // # legacy test from  Cuemon.Extensions.AspNetCore.Authentication
         {
             using (var startup = WebHostTestFactory.Create(services =>
                    {

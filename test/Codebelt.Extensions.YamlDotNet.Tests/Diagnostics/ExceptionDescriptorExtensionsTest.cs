@@ -4,9 +4,7 @@ using Cuemon.Collections.Generic;
 using Cuemon.Diagnostics;
 using Codebelt.Extensions.Xunit;
 using Cuemon;
-using Cuemon.Extensions;
 using Xunit;
-using Xunit.Abstractions;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Diagnostics

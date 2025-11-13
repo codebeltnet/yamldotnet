@@ -6,7 +6,6 @@ using Cuemon.Extensions;
 using Cuemon.Extensions.AspNetCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Codebelt.Extensions.AspNetCore.Text.Yaml
 {

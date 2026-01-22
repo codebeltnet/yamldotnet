@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.csproj" />
+    <Project Path="src/Codebelt.Extensions.AspNetCore.Text.Yaml/Codebelt.Extensions.AspNetCore.Text.Yaml.csproj" />
+    <Project Path="src/Codebelt.Extensions.YamlDotNet.App/Codebelt.Extensions.YamlDotNet.App.csproj" />
+    <Project Path="src/Codebelt.Extensions.YamlDotNet/Codebelt.Extensions.YamlDotNet.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Codebelt.Extensions.AspNetCore.Text.Yaml.Tests/Codebelt.Extensions.AspNetCore.Text.Yaml.Tests.csproj" />
+    <Project Path="test/Codebelt.Extensions.YamlDotNet.Tests/Codebelt.Extensions.YamlDotNet.Tests.csproj" />
+  </Folder>
+</Solution>

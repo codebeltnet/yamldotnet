@@ -35,6 +35,7 @@
     <SignAssembly Condition="('$(CI)' == 'true' OR '$(IsMainAuthor)' == 'true') AND '$(SkipSignAssembly)' == 'false'">true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)yamldotnet.snk</AssemblyOriginatorKeyFile>
     <NoWarn>7035,CA2260</NoWarn>
+    <PackageReleaseNotesFile>..\..\.nuget\$(MSBuildProjectName)\PackageReleaseNotes.txt</PackageReleaseNotesFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(NuGetPackageRoot)' != ''">

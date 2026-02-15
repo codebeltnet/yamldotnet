@@ -3,22 +3,22 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="11.0.4" />
-    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="11.0.4" />
-    <PackageVersion Include="Cuemon.AspNetCore" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.Core" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.IO" Version="10.1.2" />
-    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="10.1.2" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="11.0.5" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="11.0.5" />
+    <PackageVersion Include="Cuemon.AspNetCore" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.Core" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.IO" Version="10.2.1" />
+    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="10.2.1" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="MinVer" Version="7.0.0" />
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
     <PackageVersion Include="YamlDotNet" Version="16.3.0" />
-    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
+    <PackageVersion Include="coverlet.collector" Version="8.0.0" />
+    <PackageVersion Include="coverlet.msbuild" Version="8.0.0" />
     <PackageVersion Include="xunit.v3" Version="3.2.2" />
     <PackageVersion Include="xunit.v3.runner.console" Version="3.2.2" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />

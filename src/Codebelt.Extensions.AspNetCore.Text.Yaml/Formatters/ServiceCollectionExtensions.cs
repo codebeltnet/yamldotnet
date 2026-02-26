@@ -35,7 +35,7 @@ namespace Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters
         {
             Validator.ThrowIfNull(services);
             Validator.ThrowIfInvalidConfigurator(setup, out var options);
-            services.Configure(setup ?? (o =>
+            services.TryConfigure(setup ?? (o =>
             {
                 o.Settings = options.Settings;
                 o.SensitivityDetails = options.SensitivityDetails;

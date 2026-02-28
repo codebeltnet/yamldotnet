@@ -7,9 +7,21 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [10.0.4] - 2026-02-28
+## [10.1.0] - 2026-02-28
 
-This is a service update that focuses on package dependencies.
+This is a minor release that improves minimal API formatter integration, while also tightening option registration behavior across ASP.NET Core formatter setup.
+
+### Added
+
+- `ServiceCollectionExtensions` class in the Codebelt.Extensions.AspNetCore.Text.Yaml namespace was extended with a new method: `AddMinimalYamlOptions`.
+
+### Changed
+
+- `ServiceCollectionExtensions` class in the Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters namespace to use TryConfigure in `AddYamlFormatterOptions`.
+
+### Fixed
+
+- Prevented repeated `IConfigureOptions<TOptions>` registrations when formatter/options extension methods are called multiple times.
 
 ## [10.0.3] - 2026-02-20
 

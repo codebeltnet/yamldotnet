@@ -163,7 +163,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
 #if DEBUG
             Assert.True(Match("""
                                      type: System.ArgumentOutOfRangeException
-                                     source: Cuemon.Core
+                                     source: Cuemon.Kernel
                                      message: |-
                                          Specified arguments x is greater than y.
                                          Parameter name: argument
@@ -179,7 +179,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
 #else
             Assert.True(Match("""
                               type: System.ArgumentOutOfRangeException
-                              source: Cuemon.Core
+                              source: Cuemon.Kernel
                               message: |-
                                   Specified arguments x is greater than y.
                                   Parameter name: argument
@@ -195,7 +195,7 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
 #else
             Assert.True(Match("""
                          type: System.ArgumentOutOfRangeException
-                         source: Cuemon.Core
+                         source: Cuemon.Kernel
                          message: |-
                              Specified arguments x is greater than y. (Parameter 'argument')
                              Actual value was 5 > 1.

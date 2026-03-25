@@ -7,9 +7,15 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [10.1.1] - 2026-03-18
+## [10.1.1] - 2026-03-25
 
 This is a service update that focuses on package dependencies.
+
+### Changed
+
+- Codebelt.Extensions.Xunit upgraded from 11.0.7 to 11.0.8,
+- Cuemon.AspNetCore and related extension packages upgraded from 10.4.0 to 10.5.0,
+- coverlet code coverage tools upgraded from 8.0.0 to 8.0.1.
 
 ## [10.1.0] - 2026-02-28
 
@@ -134,3 +140,23 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - ScalarOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for EmitterExtensions
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
+
+[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.1...HEAD
+[10.1.1]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.0...v10.1.1
+[10.1.0]: https://github.com/codebeltnet/yamldotnet/compare/v10.0.3...v10.1.0
+[10.0.3]: https://github.com/codebeltnet/yamldotnet/compare/v10.0.2...v10.0.3
+[10.0.2]: https://github.com/codebeltnet/yamldotnet/compare/v10.0.1...v10.0.2
+[10.0.1]: https://github.com/codebeltnet/yamldotnet/compare/v10.0.0...v10.0.1
+[10.0.0]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.8...v10.0.0
+[9.0.8]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.7...v9.0.8
+[9.0.7]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.6...v9.0.7
+[9.0.6]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.5...v9.0.6
+[9.0.5]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.4...v9.0.5
+[9.0.4]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.3...v9.0.4
+[9.0.3]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.2...v9.0.3
+[9.0.2]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.1...v9.0.2
+[9.0.1]: https://github.com/codebeltnet/yamldotnet/compare/v9.0.0...v9.0.1
+[9.0.0]: https://github.com/codebeltnet/yamldotnet/releases/tag/v9.0.0
+[8.4.0]: https://github.com/codebeltnet/yamldotnet/releases/tag/v8.4.0
+[8.3.2]: https://github.com/codebeltnet/yamldotnet/releases/tag/v8.3.2
+[8.3.0]: https://github.com/codebeltnet/yamldotnet/releases/tag/v8.3.0

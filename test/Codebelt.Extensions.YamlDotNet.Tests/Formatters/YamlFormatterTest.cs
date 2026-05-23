@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cuemon.Diagnostics;
-using Cuemon.Extensions.IO;
+using System.Reflection;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.YamlDotNet.Assets;
+using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon;
+using Cuemon.Diagnostics;
 using Cuemon.Extensions;
+using Cuemon.Extensions.IO;
+using Cuemon.Reflection;
 using Xunit;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
@@ -208,6 +211,57 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
                          """.ReplaceLineEndings(), yamlString, o => o.ThrowOnNoMatch = true));
 #endif
 
+        }
+
+        [Fact]
+        public void YamlFormatter_ShouldSerializeWithEnsureRoundtrip()
+        {
+            var sut = new Book { Title = "A", Summary = "0" };
+
+            var yaml = YamlFormatter.SerializeObject(sut, o =>
+            {
+                o.Settings.EnsureRoundtrip = true;
+            });
+
+            var yamlString = yaml.ToEncodedString();
+            TestOutput.WriteLine(yamlString);
+
+            Assert.Contains("title: A", yamlString);
+            Assert.Contains("summary: 0", yamlString);
+        }
+
+        [Fact]
+        public void YamlFormatter_ShouldSerializeAndDeserializeWithNonPublicReflectionRules()
+        {
+            var sut = new Book { Title = "A", Summary = "0" };
+            var formatter = new YamlFormatter(o =>
+            {
+                o.Settings.ReflectionRules = new MemberReflection(false, true);
+                o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
+            });
+
+            var yaml = formatter.Serialize(sut).ToEncodedString();
+            TestOutput.WriteLine(yaml);
+            Assert.Contains("Title: A", yaml);
+
+            var deserialized = (Book)formatter.Deserialize(yaml.ToStream(), typeof(Book));
+            Assert.Equal("A", deserialized.Title);
+        }
+
+        [Fact]
+        public void YamlFormatter_ShouldSerializeAndDeserializeCategorizedBook()
+        {
+            var sut = new CategorizedBook { Title = "TestBook", Category = BookCategory.Technical };
+
+            var yaml = YamlFormatter.SerializeObject(sut);
+            var yamlString = yaml.ToEncodedString();
+            TestOutput.WriteLine(yamlString);
+
+            Assert.Contains("Technical", yamlString);
+
+            var deserialized = YamlFormatter.DeserializeObject<CategorizedBook>(yamlString.ToStream());
+            Assert.Equal("TestBook", deserialized.Title);
+            Assert.Equal(BookCategory.Technical, deserialized.Category);
         }
     }
 }

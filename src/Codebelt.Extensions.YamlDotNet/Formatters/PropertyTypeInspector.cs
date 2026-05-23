@@ -40,5 +40,15 @@ namespace Codebelt.Extensions.YamlDotNet.Formatters
                                                  property.Name.Equals("Parent", StringComparison.Ordinal) ||
                                                  property.Name.Equals("TargetSite", StringComparison.Ordinal)));
         }
+
+        public override bool HasParseMethod(Type type)
+        {
+            return _inspector.HasParseMethod(type);
+        }
+
+        public override object Parse(string value, Type expectedType)
+        {
+            return _inspector.Parse(value, expectedType);
+        }
     }
 }

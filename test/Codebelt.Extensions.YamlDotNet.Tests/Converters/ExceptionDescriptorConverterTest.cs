@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon.Diagnostics;
 using Cuemon.Extensions.IO;
 using Xunit;
+using YamlDotNet.Core;
 using YamlDotNet.Serialization.NamingConventions;
 
 namespace Codebelt.Extensions.YamlDotNet.Converters
@@ -53,7 +55,38 @@ namespace Codebelt.Extensions.YamlDotNet.Converters
     MutexIndex: -1
 ".ReplaceLineEndings(), result);
             }
+        }
 
+        [Fact]
+        public void ReadYaml_ShouldThrowNotImplementedException()
+        {
+            var converter = new ExceptionDescriptorConverter();
+            var parser = new Parser(new StringReader("code: X001\nmessage: Test\n"));
+
+            Assert.Throws<NotImplementedException>(() => converter.ReadYaml(parser, typeof(ExceptionDescriptor)));
+        }
+
+        [Fact]
+        public void WriteYaml_ShouldSerializeExceptionDescriptorWithHelpLink()
+        {
+            try
+            {
+                throw new AbandonedMutexException();
+            }
+            catch (Exception ex)
+            {
+                var sut = new ExceptionDescriptor(ex, "X901", "See docs.", new Uri("https://docs.example.com/X901"));
+                var formatter = new YamlFormatter(o =>
+                {
+                    o.Settings.NamingConvention = PascalCaseNamingConvention.Instance;
+                    o.Settings.Converters.Add(new ExceptionDescriptorConverter());
+                });
+                var result = formatter.Serialize(sut).ToEncodedString();
+
+                TestOutput.WriteLine(result);
+
+                Assert.Contains("HelpLink: https://docs.example.com/X901", result);
+            }
         }
     }
 }

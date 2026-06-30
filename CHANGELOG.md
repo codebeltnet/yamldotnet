@@ -7,9 +7,27 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [10.1.5] - 2026-06-25
+## [10.1.5] - 2026-07-01
 
-This is a service update that focuses on package dependencies.
+This is a patch release focused on API documentation completeness, package maintenance, and CI/CD robustness.
+
+### Added
+
+- Comprehensive API documentation for all public types and namespaces across Codebelt.Extensions.YamlDotNet, Codebelt.Extensions.AspNetCore.Text.Yaml, and Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml libraries,
+- Type-level usage examples and namespace-level guidance for developers,
+- Enhanced agent instructions for DocFX documentation maintenance.
+
+### Changed
+
+- Codebelt.Extensions.Xunit upgraded from 11.1.0 to 11.1.1,
+- Codebelt.Extensions.Xunit.Hosting.AspNetCore upgraded from 11.1.0 to 11.1.1,
+- Cuemon.AspNetCore family upgraded from 10.5.3 to 10.5.4,
+- Microsoft.NET.Test.Sdk upgraded from 18.6.0 to 18.7.0,
+- YamlDotNet upgraded from 18.0.0 to 18.1.0.
+
+### Fixed
+
+- CI deployment condition to prevent skipped optional jobs (such as disabled macOS matrix runs) from suppressing deployment.
 
 ## [10.1.4] - 2026-06-05
 
@@ -167,7 +185,9 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
-[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.3...HEAD
+[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...HEAD
+[10.1.5]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.4...v10.1.5
+[10.1.4]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.3...v10.1.4
 [10.1.3]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.2...v10.1.3
 [10.1.2]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.1...v10.1.2
 [10.1.1]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.0...v10.1.1

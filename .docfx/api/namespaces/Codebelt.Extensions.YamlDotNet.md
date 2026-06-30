@@ -2,13 +2,22 @@
 uid: Codebelt.Extensions.YamlDotNet
 summary: *content
 ---
-The `Codebelt.Extensions.YamlDotNet` namespace contains types and extension methods that complements the `YamlDotNet` namespace by adding new ways of working with YAML that aims to provide a uniform, convenient and even better developer experience.
+Serialize and deserialize .NET objects to and from YAML with uniform APIs and flexible configuration.
+
+The `Codebelt.Extensions.YamlDotNet` namespace provides the foundation for YamlDotNet-based YAML formatting across Codebelt, exposing generic serialization/deserialization APIs and low-level emitter helpers for building custom YAML converters.
 
 [!INCLUDE [availability-default](../../includes/availability-default.md)]
 
-Complements: [YamlDotNet namespace](https://github.com/aaubry/YamlDotNet) 🔗
+**Start with:** [YamlFormatter](xref:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter) to serialize and deserialize objects, or use [EmitterExtensions](xref:Codebelt.Extensions.YamlDotNet.EmitterExtensions) to write custom YAML structures.
 
-### Extension Methods
+**When to use:**
+- Serialize .NET objects to YAML with configurable naming conventions and custom converters
+- Build custom YAML converters for domain types
+- Low-level YAML event writing when emitting complex structures
+
+**Related:** [Codebelt.Extensions.YamlDotNet.Formatters](xref:Codebelt.Extensions.YamlDotNet.Formatters) · [Codebelt.Extensions.YamlDotNet.Converters](xref:Codebelt.Extensions.YamlDotNet.Converters)
+
+### Extension Members
 
 |Type|Ext|Methods|
 |--:|:-:|---|

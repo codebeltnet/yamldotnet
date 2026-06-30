@@ -2,14 +2,23 @@
 uid: Codebelt.Extensions.AspNetCore.Text.Yaml.Converters
 summary: *content
 ---
-The `Codebelt.Extensions.AspNetCore.Text.Yaml.Converters` namespace contains both types and extension methods that complements the `Codebelt.Extensions.YamlDotNet.Converters` namespace.
+Add YAML converters for ASP.NET Core types like ProblemDetails and HttpExceptionDescriptor.
+
+The `Codebelt.Extensions.AspNetCore.Text.Yaml.Converters` namespace provides extension methods to register YAML converters for ASP.NET Core types. Use this namespace to customize how ProblemDetails, HTTP exceptions, and exception descriptors are serialized to YAML in error responses.
 
 [!INCLUDE [availability-modern](../../includes/availability-modern.md)]
 
-Complements: [Cuemon.Text.Yaml.Converters namespace](/api/Codebelt.Extensions.YamlDotNet.Converters.html) 📘
+**Start with:** [YamlConverterExtensions.AddProblemDetailsConverter](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.AddProblemDetailsConverter*) or [YamlConverterExtensions.AddHttpExceptionDescriptorConverter](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.AddHttpExceptionDescriptorConverter*) to register converters for exception handling.
 
-### Extension Methods
+**When to use:**
+- Customize YAML serialization of `ProblemDetails` in API error responses
+- Format HTTP exception descriptors with sensitivity controls for stack traces and diagnostic data
+- Build chains of custom converters for domain-specific error types
+
+**Related:** [Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters) · [Codebelt.Extensions.YamlDotNet.Converters](xref:Codebelt.Extensions.YamlDotNet.Converters)
+
+### Extension Members
 
 |Type|Ext|Methods|
 |--:|:-:|---|
-|YamlConverter|⬇️|`AddExceptionDescriptorConverter`, `AddHttpExceptionDescriptorConverter`|
+|ICollection&lt;YamlConverter&gt;|⬇️|`AddProblemDetailsConverter`, `AddHttpExceptionDescriptorConverter`|

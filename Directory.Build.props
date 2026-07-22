@@ -2,11 +2,15 @@
 
   <PropertyGroup>
     <IsTestProject>$(MSBuildProjectName.EndsWith('Tests'))</IsTestProject>
+    <IsBenchmarkProject>$(MSBuildProjectName.EndsWith('Benchmarks'))</IsBenchmarkProject>
+    <IsSourceProject>$(MSBuildProjectDirectory.ToLower().StartsWith('$(MSBuildThisFileDirectory.ToLower())src'))</IsSourceProject>
+    <IsToolingProject>$(MSBuildProjectDirectory.ToLower().StartsWith('$(MSBuildThisFileDirectory.ToLower())tooling'))</IsToolingProject>
     <IsLinux>$([MSBuild]::IsOSPlatform('Linux'))</IsLinux>
     <IsMacOS>$([MSBuild]::IsOSPlatform('OSX'))</IsMacOS>
     <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
     <IsMainAuthor Condition="'$(EMAIL)' == 'michael@geekle.io'">true</IsMainAuthor>
     <SkipSignAssembly>false</SkipSignAssembly>
+    <PackageReleaseNotesFile>..\..\.nuget\$(MSBuildProjectName)\PackageReleaseNotes.txt</PackageReleaseNotesFile>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -15,9 +19,9 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(IsTestProject)' == 'false'">
+  <PropertyGroup Condition="'$(IsSourceProject)' == 'true'">
     <TargetFrameworks>net10.0;net9.0;netstandard2.0</TargetFrameworks>
-    <Copyright>Copyright © Geekle 2024-2025. All rights reserved.</Copyright>
+    <Copyright>Copyright © Geekle 2024-2026. All rights reserved.</Copyright>
     <Authors>gimlichael</Authors>
     <Company>Geekle</Company>
     <Product>Extensions for YamlDotNet API by Codebelt</Product>
@@ -36,7 +40,10 @@
     <SignAssembly Condition="('$(CI)' == 'true' OR '$(IsMainAuthor)' == 'true') AND '$(SkipSignAssembly)' == 'false'">true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)yamldotnet.snk</AssemblyOriginatorKeyFile>
     <NoWarn>7035,CA2260</NoWarn>
-    <PackageReleaseNotesFile>..\..\.nuget\$(MSBuildProjectName)\PackageReleaseNotes.txt</PackageReleaseNotesFile>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(NuGetPackageRoot)' != ''">
@@ -65,7 +72,7 @@
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <SonarQubeExclude>true</SonarQubeExclude>
     <WarningLevel>0</WarningLevel>
-    <AnalysisLevel>none</AnalysisLevel>
+    <AnalysisMode>none</AnalysisMode>
     <NoWarn>NU1701,NETSDK1206</NoWarn>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>

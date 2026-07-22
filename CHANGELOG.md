@@ -7,6 +7,23 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
+## [10.1.6] - 2026-07-22
+
+This is a patch release focused on package maintenance, internal refactoring, and tooling improvements.
+
+### Changed
+
+- Codebelt.Extensions.Xunit upgraded from 11.1.1 to 11.1.2,
+- Cuemon.AspNetCore and related packages upgraded from 10.5.4 to 10.5.5,
+- Microsoft.NET.Test.Sdk upgraded from 18.7.0 to 18.8.1,
+- Build configuration refined with newer analyzer defaults,
+- DocFX nginx base image updated to 1.31-alpine,
+- HttpExceptionDescriptor YAML serialization helpers refactored for improved maintainability.
+
+### Fixed
+
+- Converter XML documentation type references corrected for consistent documentation generation.
+
 ## [10.1.5] - 2026-07-01
 
 This is a patch release focused on API documentation completeness, package maintenance, and CI/CD robustness.
@@ -185,7 +202,8 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
-[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...HEAD
+[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...HEAD
+[10.1.6]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...v10.1.6
 [10.1.5]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.4...v10.1.5
 [10.1.4]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.3...v10.1.4
 [10.1.3]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.2...v10.1.3

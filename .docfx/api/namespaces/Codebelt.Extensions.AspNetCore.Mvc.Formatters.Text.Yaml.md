@@ -8,7 +8,7 @@ The `Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml` namespace provides
 
 [!INCLUDE [availability-modern](../../includes/availability-modern.md)]
 
-**Start with:** [MvcBuilderExtensions.AddYamlFormatters](xref:Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.MvcBuilderExtensions.AddYamlFormatters*) to register YAML formatters with full MVC, or [MvcCoreBuilderExtensions.AddYamlFormatters](xref:Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.MvcCoreBuilderExtensions.AddYamlFormatters*) for minimal APIs.
+**Start with:** [MvcBuilderExtensions.AddYamlFormatters](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.MvcBuilderExtensions.html#Codebelt_Extensions_AspNetCore_Mvc_Formatters_Text_Yaml_MvcBuilderExtensions_AddYamlFormatters_) to register YAML formatters with full MVC, or [MvcCoreBuilderExtensions.AddYamlFormatters](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml.MvcCoreBuilderExtensions.html#Codebelt_Extensions_AspNetCore_Mvc_Formatters_Text_Yaml_MvcCoreBuilderExtensions_AddYamlFormatters_) for minimal APIs.
 
 **When to use:**
 - Add YAML content negotiation to ASP.NET Core MVC controllers (request/response bodies)

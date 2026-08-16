@@ -8,7 +8,7 @@ The `Codebelt.Extensions.YamlDotNet.Formatters` namespace exposes `YamlFormatter
 
 [!INCLUDE [availability-default](../../includes/availability-default.md)]
 
-**Start with:** [YamlFormatter](xref:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter) to serialize objects, or [YamlFormatter.DeserializeObject](xref:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.DeserializeObject*) to parse YAML with custom delegates.
+**Start with:** [YamlFormatter](xref:Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter) to serialize objects, or [YamlFormatter.DeserializeObject](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.YamlDotNet.Formatters.YamlFormatter.html#Codebelt_Extensions_YamlDotNet_Formatters_YamlFormatter_DeserializeObject_) to parse YAML with custom delegates.
 
 **When to use:**
 - Serialize .NET objects to YAML format with custom naming conventions

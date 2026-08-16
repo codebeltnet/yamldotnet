@@ -8,7 +8,7 @@ The `Codebelt.Extensions.YamlDotNet.Converters` namespace provides abstract `Yam
 
 [!INCLUDE [availability-default](../../includes/availability-default.md)]
 
-**Start with:** [YamlConverter](xref:Codebelt.Extensions.YamlDotNet.Converters.YamlConverter) base class to build custom converters, or use [YamlConverterFactory](xref:Codebelt.Extensions.YamlDotNet.Converters.YamlConverterFactory) to create converters with delegates.
+**Start with:** [YamlConverter](xref:Codebelt.Extensions.YamlDotNet.Converters.YamlConverter) base class to build custom converters, or use [YamlConverterFactory](xref:Codebelt.Extensions.YamlDotNet.YamlConverterFactory) to create converters with delegates.
 
 **When to use:**
 - Create custom converters for domain types that need special YAML formatting

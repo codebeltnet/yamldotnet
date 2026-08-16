@@ -8,7 +8,7 @@ The `Codebelt.Extensions.AspNetCore.Text.Yaml.Converters` namespace provides ext
 
 [!INCLUDE [availability-modern](../../includes/availability-modern.md)]
 
-**Start with:** [YamlConverterExtensions.AddProblemDetailsConverter](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.AddProblemDetailsConverter*) or [YamlConverterExtensions.AddHttpExceptionDescriptorConverter](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.AddHttpExceptionDescriptorConverter*) to register converters for exception handling.
+**Start with:** [YamlConverterExtensions.AddProblemDetailsConverter](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.html#Codebelt_Extensions_AspNetCore_Text_Yaml_Converters_YamlConverterExtensions_AddProblemDetailsConverter_) or [YamlConverterExtensions.AddHttpExceptionDescriptorConverter](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Text.Yaml.Converters.YamlConverterExtensions.html#Codebelt_Extensions_AspNetCore_Text_Yaml_Converters_YamlConverterExtensions_AddHttpExceptionDescriptorConverter_) to register converters for exception handling.
 
 **When to use:**
 - Customize YAML serialization of `ProblemDetails` in API error responses

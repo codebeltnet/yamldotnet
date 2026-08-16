@@ -8,7 +8,7 @@ The `Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters` namespace provides ser
 
 [!INCLUDE [availability-modern](../../includes/availability-modern.md)]
 
-**Start with:** [ServiceCollectionExtensions.AddYamlFormatterOptions](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters.ServiceCollectionExtensions.AddYamlFormatterOptions*) to configure YAML formatting, or [ServiceCollectionExtensions.AddYamlExceptionResponseFormatter](xref:Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters.ServiceCollectionExtensions.AddYamlExceptionResponseFormatter*) to handle error responses.
+**Start with:** [ServiceCollectionExtensions.AddYamlFormatterOptions](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters.ServiceCollectionExtensions.html#Codebelt_Extensions_AspNetCore_Text_Yaml_Formatters_ServiceCollectionExtensions_AddYamlFormatterOptions_) to configure YAML formatting, or [ServiceCollectionExtensions.AddYamlExceptionResponseFormatter](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters.ServiceCollectionExtensions.html#Codebelt_Extensions_AspNetCore_Text_Yaml_Formatters_ServiceCollectionExtensions_AddYamlExceptionResponseFormatter_) to handle error responses.
 
 **When to use:**
 - Configure YAML formatter options (naming conventions, custom converters, sensitivity details) for the application

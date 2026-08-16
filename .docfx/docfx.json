@@ -60,6 +60,9 @@
       },
       "_gitUrlPattern": "github"
     },
+    "sitemap": {
+      "baseUrl": "https://yamldotnet.codebelt.net"
+    },
     "dest": "wwwroot",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

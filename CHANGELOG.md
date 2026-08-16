@@ -7,6 +7,26 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
+## [10.1.7] - 2026-08-16
+
+This is a patch release focused on package dependency upgrades and test infrastructure improvements.
+
+### Changed
+
+- Codebelt.Extensions.Xunit upgraded from 11.1.2 to 11.2.1,
+- Codebelt.Extensions.Xunit.Hosting.AspNetCore upgraded from 11.1.2 to 11.2.1,
+- Cuemon.AspNetCore family upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.AspNetCore upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.AspNetCore.Authentication upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.Core upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.DependencyInjection upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.IO upgraded from 10.5.5 to 10.7.0,
+- Cuemon.Extensions.Reflection upgraded from 10.5.5 to 10.7.0,
+- Microsoft.NET.Test.Sdk upgraded from 18.8.1 to 18.9.0,
+- Namespace documentation updated to use absolute URLs for improved link stability and SEO,
+- Test runner environments consolidated into single multi-target image supporting .NET 8-11,
+- DocFX configuration enhanced with sitemap generation for improved discoverability.
+
 ## [10.1.6] - 2026-07-22
 
 This is a patch release focused on package maintenance, internal refactoring, and tooling improvements.
@@ -203,6 +223,7 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
 [Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...HEAD
+[10.1.7]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...v10.1.7
 [10.1.6]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...v10.1.6
 [10.1.5]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.4...v10.1.5
 [10.1.4]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.3...v10.1.4

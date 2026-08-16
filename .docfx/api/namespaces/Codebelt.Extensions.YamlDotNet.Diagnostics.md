@@ -8,7 +8,7 @@ The `Codebelt.Extensions.YamlDotNet.Diagnostics` namespace provides extension me
 
 [!INCLUDE [availability-default](../../includes/availability-default.md)]
 
-**Start with:** [ExceptionDescriptor.ToYaml](xref:Codebelt.Extensions.YamlDotNet.Diagnostics.ExceptionDescriptorExtensions.ToYaml*) to convert exception descriptors to YAML strings.
+**Start with:** [ExceptionDescriptor.ToYaml](https://yamldotnet.codebelt.net/api/Codebelt.Extensions.YamlDotNet.Diagnostics.ExceptionDescriptorExtensions.html#Codebelt_Extensions_YamlDotNet_Diagnostics_ExceptionDescriptorExtensions_ToYaml_) to convert exception descriptors to YAML strings.
 
 **When to use:**
 - Format exception diagnostics as YAML for structured logging

@@ -7,6 +7,28 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
+## [10.1.8] - 2026-09-12
+
+This is a patch release that modernizes the test infrastructure and updates
+project dependencies. The primary focus is upgrading the xunit testing framework
+to v4 alongside the Microsoft.Testing.Platform runner, replacing coverlet with
+Microsoft.Testing.Extensions.CodeCoverage, and enhancing build configuration.
+
+### Changed
+
+- xunit framework upgraded from v3.2.2 to v4.0.0, including xunit.v3, xunit.v3.runner.console, and xunit.runner.visualstudio,
+- Codebelt.Extensions.Xunit upgraded from 11.2.1 to 12.0.1,
+- Codebelt.Extensions.Xunit.Hosting.AspNetCore upgraded from 11.2.1 to 12.0.1,
+- Cuemon package family upgraded from 10.7.0 to 10.7.1 (AspNetCore, Extensions.AspNetCore, Extensions.AspNetCore.Authentication, Extensions.Core, Extensions.DependencyInjection, Extensions.IO, Extensions.Reflection),
+- Microsoft.NET.Test.Sdk upgraded from 18.9.0 to 18.10.0,
+- MinVer upgraded from 7.0.0 to 8.0.0,
+- Test coverage infrastructure replaced with Microsoft.Testing.Extensions.CodeCoverage v18.11.2,
+- CI/CD pipeline updated to remove RunConfiguration.DisableAppDomain setting (no longer needed with xunit v4 and Microsoft.Testing.Platform),
+- Project-level test runner configuration centralized in global.json with Microsoft.Testing.Platform,
+- Build configuration (Directory.Build.props and Directory.Build.targets) aligned with xunit v4 requirements,
+- Editor configuration and git attributes added for consistent developer environment,
+- Contributing guide updated to reflect Codebelt standards and improved developer guidance.
+
 ## [10.1.7] - 2026-08-16
 
 This is a patch release focused on package dependency upgrades and test infrastructure improvements.
@@ -222,7 +244,8 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
-[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...HEAD
+[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.8...HEAD
+[10.1.8]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.7...v10.1.8
 [10.1.7]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...v10.1.7
 [10.1.6]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...v10.1.6
 [10.1.5]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.4...v10.1.5

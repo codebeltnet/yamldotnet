@@ -3,24 +3,23 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="11.2.1" />
-    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="11.2.1" />
-    <PackageVersion Include="Cuemon.AspNetCore" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.Core" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.IO" Version="10.7.0" />
-    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="10.7.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
-    <PackageVersion Include="MinVer" Version="7.0.0" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit" Version="12.0.1" />
+    <PackageVersion Include="Codebelt.Extensions.Xunit.Hosting.AspNetCore" Version="12.0.1" />
+    <PackageVersion Include="Cuemon.AspNetCore" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.AspNetCore.Mvc" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.AspNetCore.Authentication" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.Core" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.DependencyInjection" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.IO" Version="10.7.1" />
+    <PackageVersion Include="Cuemon.Extensions.Reflection" Version="10.7.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.0" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.11.2" />
+    <PackageVersion Include="MinVer" Version="8.0.0" />
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
     <PackageVersion Include="YamlDotNet" Version="18.1.0" />
-    <PackageVersion Include="coverlet.collector" Version="10.0.1" />
-    <PackageVersion Include="coverlet.msbuild" Version="10.0.1" />
-    <PackageVersion Include="xunit.v3" Version="3.2.2" />
-    <PackageVersion Include="xunit.v3.runner.console" Version="3.2.2" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="xunit.v3" Version="4.0.0" />
+    <PackageVersion Include="xunit.v3.runner.console" Version="4.0.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
   </ItemGroup>
 </Project>

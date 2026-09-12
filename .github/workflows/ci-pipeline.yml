@@ -90,7 +90,6 @@ jobs:
     with:
       runs-on: ${{ matrix.arch == 'ARM64' && 'ubuntu-24.04-arm' || 'ubuntu-24.04' }}
       configuration: ${{ matrix.configuration }}
-      test-arguments: -- RunConfiguration.DisableAppDomain=true
       build-switches: -p:SkipSignAssembly=true
       restore: true # net48 requires packages to be restored
       build: true # net48 requires projects to be built (and so does xunitv3)
@@ -108,7 +107,6 @@ jobs:
     with:
       runs-on: ${{ matrix.arch == 'ARM64' && 'windows-11-arm' || 'windows-2025' }}
       configuration: ${{ matrix.configuration }}
-      test-arguments: -- RunConfiguration.DisableAppDomain=true
       build-switches: -p:SkipSignAssembly=true
       restore: true # net48 requires packages to be restored
       build: true # net48 requires projects to be built (and so does xunitv3)
@@ -127,7 +125,6 @@ jobs:
     with:
       runs-on: ${{ matrix.arch == 'ARM64' && 'macos-26' || 'macos-26-intel' }}
       configuration: ${{ matrix.configuration }}
-      test-arguments: -- RunConfiguration.DisableAppDomain=true
       build-switches: -p:SkipSignAssembly=true
       restore: true
       build: true

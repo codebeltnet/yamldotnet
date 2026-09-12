@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec" Condition="'$(IsTestProject)' == 'false' AND Exists('$(PackageReleaseNotesFile)')">
     <PropertyGroup>
       <PackageReleaseNotes>$([System.IO.File]::ReadAllText('$(PackageReleaseNotesFile)'))</PackageReleaseNotes>
@@ -11,5 +11,4 @@
       <FileVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(GITHUB_RUN_NUMBER)</FileVersion>
     </PropertyGroup>
   </Target>
-
 </Project>

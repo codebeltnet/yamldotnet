@@ -7,9 +7,25 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [10.1.9] - 2026-10-16
+## [10.1.9] - 2026-10-17
 
-This is a service update that focuses on package dependencies.
+This is a patch release that updates dependencies, consolidates agent guidance and revises documentation hosting.
+
+### Added
+
+- Added `nginx.conf` for port 8080, immutable caching of fingerprinted public assets and disabled caching and validators for stable documentation URLs.
+
+### Changed
+
+- Updated `Cuemon.AspNetCore`, `Cuemon.AspNetCore.Mvc`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Authentication`, `Cuemon.Extensions.Core`, `Cuemon.Extensions.DependencyInjection`, `Cuemon.Extensions.IO`, `Cuemon.Extensions.Reflection` from 10.7.1 to 10.8.1,
+- Updated `Codebelt.Extensions.Xunit`, `Codebelt.Extensions.Xunit.Hosting.AspNetCore` from 12.0.1 to 12.0.2,
+- Updated `Microsoft.NET.Test.Sdk` from 18.10.0 to 18.11.0,
+- Updated `Microsoft.Testing.Extensions.CodeCoverage` from 18.11.2 to 18.12.0,
+- Updated `xunit.runner.visualstudio` from 4.0.0 to 4.0.1,
+- Updated `xunit.v3`, `xunit.v3.runner.console` from 4.0.0 to 4.0.2,
+- Consolidated the complete test, benchmark and XML documentation guidance in `AGENTS.md`, preserving examples and path scopes and updating guidance links,
+- Configured DocFX for separate member pages, the `templates/ms-style` template and a monthly sitemap; switched documentation containers to `dhi.io/nginx` and the `codebeltnet/docfx:2` builder,
+- Updated the contributor test command to use Microsoft Testing Platform `--project` syntax.
 
 ## [10.1.8] - 2026-09-12
 
@@ -248,7 +264,7 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
-[Unreleased]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.8...HEAD
+[10.1.9]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.8...v10.1.9
 [10.1.8]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.7...v10.1.8
 [10.1.7]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...v10.1.7
 [10.1.6]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.5...v10.1.6

@@ -12,6 +12,7 @@
         }
       ],
       "dest": "api",
+      "memberLayout": "separatePages",
       "filter": "filterConfig.yml",
       "properties": {
         "TargetFramework": "net10.0"
@@ -61,14 +62,16 @@
       "_gitUrlPattern": "github"
     },
     "sitemap": {
-      "baseUrl": "https://yamldotnet.codebelt.net"
+      "baseUrl": "https://yamldotnet.codebelt.net/",
+      "changefreq": "monthly"
     },
     "dest": "wwwroot",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/ms-style"
     ],
     "overwrite": [
       {

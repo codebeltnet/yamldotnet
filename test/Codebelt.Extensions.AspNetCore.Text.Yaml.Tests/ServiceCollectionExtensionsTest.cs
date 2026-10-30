@@ -7,32 +7,31 @@ using Cuemon.AspNetCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Codebelt.Extensions.AspNetCore.Text.Yaml
+namespace Codebelt.Extensions.AspNetCore.Text.Yaml;
+
+public class ServiceCollectionExtensionsTest : Test
 {
-    public class ServiceCollectionExtensionsTest : Test
+    public ServiceCollectionExtensionsTest(ITestOutputHelper output) : base(output)
     {
-        public ServiceCollectionExtensionsTest(ITestOutputHelper output) : base(output)
-        {
-        }
+    }
 
-        [Fact]
-        public void AddMinimalYamlOptions_ShouldThrowArgumentNullException_WhenServicesIsNull()
-        {
-            Assert.Throws<ArgumentNullException>(() => ((IServiceCollection)null).AddMinimalYamlOptions());
-        }
+    [Fact]
+    public void AddMinimalYamlOptions_ShouldThrowArgumentNullException_WhenServicesIsNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => ((IServiceCollection)null).AddMinimalYamlOptions());
+    }
 
-        [Fact]
-        public void AddMinimalYamlOptions_ShouldRegisterYamlExceptionResponseFormatter()
-        {
-            var services = new ServiceCollection();
-            services.AddOptions();
-            services.AddMinimalYamlOptions();
+    [Fact]
+    public void AddMinimalYamlOptions_ShouldRegisterYamlExceptionResponseFormatter()
+    {
+        var services = new ServiceCollection();
+        services.AddOptions();
+        services.AddMinimalYamlOptions();
 
-            var count = services.Count(sd => sd.ServiceType == typeof(HttpExceptionDescriptorResponseFormatter<YamlFormatterOptions>));
+        var count = services.Count(sd => sd.ServiceType == typeof(HttpExceptionDescriptorResponseFormatter<YamlFormatterOptions>));
 
-            TestOutput.WriteLine($"HttpExceptionDescriptorResponseFormatter<YamlFormatterOptions> registration count: {count}");
+        TestOutput.WriteLine($"HttpExceptionDescriptorResponseFormatter<YamlFormatterOptions> registration count: {count}");
 
-            Assert.Equal(1, count);
-        }
+        Assert.Equal(1, count);
     }
 }

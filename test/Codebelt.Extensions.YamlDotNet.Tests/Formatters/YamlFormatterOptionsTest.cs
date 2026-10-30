@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using Codebelt.Extensions.Xunit;
 using Cuemon;
@@ -7,63 +7,62 @@ using Cuemon.Reflection;
 using Cuemon.Text;
 using Xunit;
 
-namespace Codebelt.Extensions.YamlDotNet.Formatters
+namespace Codebelt.Extensions.YamlDotNet.Formatters;
+
+public class YamlFormatterOptionsTest : Test
 {
-    public class YamlFormatterOptionsTest : Test
+    public YamlFormatterOptionsTest(ITestOutputHelper output) : base(output)
     {
-        public YamlFormatterOptionsTest(ITestOutputHelper output) : base(output)
+    }
+
+    [Fact]
+    public void YamlFormatterOptions_SettingsIsNull_ShouldThrowInvalidOperationException()
+    {
+        var sut1 = new YamlFormatterOptions()
         {
-        }
+            Settings = null
+        };
+        var sut2 = Assert.Throws<InvalidOperationException>(() => sut1.ValidateOptions());
+        var sut3 = Assert.Throws<ArgumentException>(() => Validator.ThrowIfInvalidOptions(sut1));
 
-        [Fact]
-        public void YamlFormatterOptions_SettingsIsNull_ShouldThrowInvalidOperationException()
+        Assert.Equal("Operation is not valid due to the current state of the object. (Expression 'Settings == null')", sut2.Message);
+        Assert.StartsWith("YamlFormatterOptions are not in a valid state.", sut3.Message);
+        Assert.Contains("sut1", sut3.Message);
+        Assert.IsType<InvalidOperationException>(sut3.InnerException);
+    }
+
+    [Fact]
+    public void YamlFormatterOptions_SupportedMediaTypesIsNull_ShouldThrowInvalidOperationException()
+    {
+        var sut1 = new YamlFormatterOptions()
         {
-            var sut1 = new YamlFormatterOptions()
-            {
-                Settings = null
-            };
-            var sut2 = Assert.Throws<InvalidOperationException>(() => sut1.ValidateOptions());
-            var sut3 = Assert.Throws<ArgumentException>(() => Validator.ThrowIfInvalidOptions(sut1));
+            SupportedMediaTypes = null
+        };
+        var sut2 = Assert.Throws<InvalidOperationException>(() => sut1.ValidateOptions());
+        var sut3 = Assert.Throws<ArgumentException>(() => Validator.ThrowIfInvalidOptions(sut1));
 
-            Assert.Equal("Operation is not valid due to the current state of the object. (Expression 'Settings == null')", sut2.Message);
-            Assert.StartsWith("YamlFormatterOptions are not in a valid state.", sut3.Message);
-            Assert.Contains("sut1", sut3.Message);
-            Assert.IsType<InvalidOperationException>(sut3.InnerException);
-        }
+        Assert.Equal("Operation is not valid due to the current state of the object. (Expression 'SupportedMediaTypes == null')", sut2.Message);
+        Assert.StartsWith("YamlFormatterOptions are not in a valid state.", sut3.Message);
+        Assert.Contains("sut1", sut3.Message);
+        Assert.IsType<InvalidOperationException>(sut3.InnerException);
+    }
 
-        [Fact]
-        public void YamlFormatterOptions_SupportedMediaTypesIsNull_ShouldThrowInvalidOperationException()
-        {
-            var sut1 = new YamlFormatterOptions()
-            {
-                SupportedMediaTypes = null
-            };
-            var sut2 = Assert.Throws<InvalidOperationException>(() => sut1.ValidateOptions());
-            var sut3 = Assert.Throws<ArgumentException>(() => Validator.ThrowIfInvalidOptions(sut1));
+    [Fact]
+    public void YamlFormatterOptions_ShouldHaveDefaultValues()
+    {
+        var sut = new YamlFormatterOptions();
+        var sutType = sut.GetType();
 
-            Assert.Equal("Operation is not valid due to the current state of the object. (Expression 'SupportedMediaTypes == null')", sut2.Message);
-            Assert.StartsWith("YamlFormatterOptions are not in a valid state.", sut3.Message);
-            Assert.Contains("sut1", sut3.Message);
-            Assert.IsType<InvalidOperationException>(sut3.InnerException);
-        }
+        Assert.NotNull(sut.Settings);
+        Assert.NotNull(sut.SupportedMediaTypes);
+        Assert.Equal(EncodingOptions.DefaultEncoding, sut.Encoding);
+        Assert.Equal(EncodingOptions.DefaultPreambleSequence, sut.Preamble);
+        Assert.Equal(FaultSensitivityDetails.None, sut.SensitivityDetails);
+        Assert.True(sut.Settings.Converters.Count == 1, "sut.Settings.Converters.Count == 1");
+        Assert.Equal(YamlFormatterOptions.DefaultMediaType, sut.SupportedMediaTypes.First());
 
-        [Fact]
-        public void YamlFormatterOptions_ShouldHaveDefaultValues()
-        {
-            var sut = new YamlFormatterOptions();
-            var sutType = sut.GetType();
+        sutType.GetMethod("RefreshWithConverterDependencies", MemberReflection.Everything)!.Invoke(sut, null);
 
-            Assert.NotNull(sut.Settings);
-            Assert.NotNull(sut.SupportedMediaTypes);
-            Assert.Equal(EncodingOptions.DefaultEncoding, sut.Encoding);
-            Assert.Equal(EncodingOptions.DefaultPreambleSequence, sut.Preamble);
-            Assert.Equal(FaultSensitivityDetails.None, sut.SensitivityDetails);
-            Assert.True(sut.Settings.Converters.Count == 1, "sut.Settings.Converters.Count == 1");
-            Assert.Equal(YamlFormatterOptions.DefaultMediaType, sut.SupportedMediaTypes.First());
-
-            sutType.GetMethod("RefreshWithConverterDependencies", MemberReflection.Everything)!.Invoke(sut, null);
-
-            Assert.True(sut.Settings.Converters.Count == 3, "sut.Settings.Converters.Count == 3");
-        }
+        Assert.True(sut.Settings.Converters.Count == 3, "sut.Settings.Converters.Count == 3");
     }
 }

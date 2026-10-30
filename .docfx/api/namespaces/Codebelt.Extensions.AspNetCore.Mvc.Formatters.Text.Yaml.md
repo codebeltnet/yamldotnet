@@ -1,4 +1,4 @@
-﻿---
+---
 uid: Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml
 summary: *content
 ---

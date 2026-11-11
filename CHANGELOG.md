@@ -7,28 +7,32 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
-## [11.0.0] - 2026-11-10
+## [11.0.0] - 2026-11-12
 
-This major release adds .NET 11, removes .NET 9 targets, and retains .NET Standard 2.0 for the core package. It also updates dependencies, test infrastructure, and documentation hosting.
+This major release adds .NET 11 support, removes .NET 9 targets, and updates the .NET and package toolchains alongside CI, release automation, and documentation asset caching.
 
 ### Added
 
-- .NET 11 package assets and test targets,
-- `SonarAnalyzer.CSharp` 10.35.0.4138 for non-test projects.
+- .NET 11 package assets and test targets, while the core package continues to target .NET Standard 2.0,
+- `SonarAnalyzer.CSharp` 10.36.0.15337 for non-test projects.
 
 ### Changed
 
-- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1 and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
-- Updated `Cuemon.AspNetCore`, `Cuemon.AspNetCore.Mvc`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Authentication`, `Cuemon.Extensions.Core`, `Cuemon.Extensions.DependencyInjection`, `Cuemon.Extensions.IO`, and `Cuemon.Extensions.Reflection` from 10.8.1 to 10.8.2,
-- Enabled preview SDK provisioning and Ubuntu 26.04 in CI and retained explicit coverage filters for production assemblies,
-- Split Docker test environments by .NET 10 and .NET 11 and updated contributor guidance,
-- Service-update automation preserves pending releases and package-note blocks, validates release dates, and rejects prerelease dependency triggers,
-- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges,
-- Updated package descriptions, release notes, and DocFX availability for the supported frameworks.
+- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 11.0.0, `Codebelt.Extensions.Xunit` and `Codebelt.Extensions.Xunit.Hosting.AspNetCore` from 12.0.2 to 13.0.0, and the eight `Cuemon.*` packages from 10.8.1 to 11.0.0,
+- Updated `Microsoft.NET.Test.Sdk` from 18.11.0 to 18.12.0, `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.3, and `xunit.v3` and `xunit.v3.runner.console` from 4.0.2 to 4.0.3,
+- Moved CI runners to Ubuntu 26.04 and removed preview SDK provisioning and explicit coverage filters,
+- Split Docker test environments for .NET 10 and .NET 11 and updated contributor guidance for the supported targets and Ubuntu 26.04 WSL distribution,
+- Updated service-update automation to derive releases from stable Git tags, preserve a planned newer changelog version, and validate release dates,
+- Pinned Scorecard workflow actions to commit SHAs,
+- Updated framework availability in package and DocFX documentation and made file-scoped namespaces a C# build requirement.
+
+### Fixed
+
+- Fingerprinted documentation assets receive immutable caching only for successful and 304 responses, and range requests are disabled.
 
 ### Removed
 
-- .NET 9 targets from packages and tests; the three modern-only packages require .NET 10 or later, while the core package retains .NET Standard 2.0.
+- .NET 9 targets from packages and tests; the core package retains .NET Standard 2.0, while the other packages target .NET 10 or later.
 
 ## [10.1.9] - 2026-10-17
 

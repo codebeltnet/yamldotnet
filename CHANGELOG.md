@@ -7,6 +7,10 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
+## [10.1.10] - 2026-11-11
+
+This is a service update that focuses on package dependencies.
+
 ## [10.1.9] - 2026-10-17
 
 This is a patch release that updates dependencies, consolidates agent guidance and revises documentation hosting.

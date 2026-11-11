@@ -4,28 +4,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
-> [!NOTE]  
+> [!NOTE]
 > Changelog entries prior to version 8.4.0 was migrated from previous versions of `Cuemon.Extensions.YamlDotNet`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Mvc` and `Cuemon.Extensions.Diagnostics`.
 
 ## [11.0.0] - 2026-11-10
 
-This major release prepares the packages for .NET 11 while retaining .NET 10 and core .NET Standard 2.0 support.
+This major release adds .NET 11, removes .NET 9 targets, and retains .NET Standard 2.0 for the core package. It also updates dependencies, test infrastructure, and documentation hosting.
 
 ### Added
 
-- Added .NET 11 package assets and test targets.
+- .NET 11 package assets and test targets,
+- `SonarAnalyzer.CSharp` 10.35.0.4138 for non-test projects.
 
 ### Changed
 
-- Enabled preview SDK provisioning for build, pack, test, SonarCloud and CodeQL workflows.
-- Configured explicit coverage filters so inferred test namespaces do not exclude production assemblies.
-- Updated Codebelt.Coverlet.MTP from 10.1.0 to 10.1.1.
-- Preserved pending release versions and package-note blocks during service updates, and rejected prerelease dependency triggers.
-- Aligned contributor guidance, package descriptions and DocFX availability with the supported frameworks.
+- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1 and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
+- Updated `Cuemon.AspNetCore`, `Cuemon.AspNetCore.Mvc`, `Cuemon.Extensions.AspNetCore`, `Cuemon.Extensions.AspNetCore.Authentication`, `Cuemon.Extensions.Core`, `Cuemon.Extensions.DependencyInjection`, `Cuemon.Extensions.IO`, and `Cuemon.Extensions.Reflection` from 10.8.1 to 10.8.2,
+- Enabled preview SDK provisioning and Ubuntu 26.04 in CI and retained explicit coverage filters for production assemblies,
+- Split Docker test environments by .NET 10 and .NET 11 and updated contributor guidance,
+- Service-update automation preserves pending releases and package-note blocks, validates release dates, and rejects prerelease dependency triggers,
+- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges,
+- Updated package descriptions, release notes, and DocFX availability for the supported frameworks.
 
 ### Removed
 
-- Removed .NET 9 targets from packages and tests; modern-only packages now require .NET 10 or later. The core package retains its .NET Standard 2.0 asset and Windows net48 tests.
+- .NET 9 targets from packages and tests; the three modern-only packages require .NET 10 or later, while the core package retains .NET Standard 2.0.
 
 ## [10.1.9] - 2026-10-17
 
@@ -284,7 +287,7 @@ ExceptionDescriptorExtensions class in the Codebelt.Extensions.YamlDotNet.Diagno
 - YamlConverterFactory class in the Codebelt.Extensions.YamlDotNet namespace that provides a factory based way to create and wrap an YamlConverter implementations
 - YamlSerializerOptions class in the Codebelt.Extensions.YamlDotNet namespace that provides configuration options for SerializerBuilder and DeserializerBuilder
 
-[11.0.0]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.9...HEAD
+[11.0.0]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.9...v11.0.0
 [10.1.9]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.8...v10.1.9
 [10.1.8]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.7...v10.1.8
 [10.1.7]: https://github.com/codebeltnet/yamldotnet/compare/v10.1.6...v10.1.7

@@ -23,8 +23,8 @@ dotnet_diagnostic.IDE0066.severity = none
 
 # Performance rules
 # https://docs.microsoft.com/da-dk/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings
-# Many suggestions from performance analyzers are not compatible with .NET Standard 2.0.
 [*.{cs,vb}]
+# Many suggestions from performance analyzers are not compatible with .NET Standard 2.0.
 dotnet_analyzer_diagnostic.category-Performance.severity = none
 
 # This style rule concerns the use of using statements without curly braces, also known as using declarations. This alternative syntax was introduced in C# 8.0.
@@ -38,7 +38,7 @@ dotnet_diagnostic.IDE0063.severity = none
 dotnet_diagnostic.IDE0071.severity = none
 
 # S3267: Loops should be simplified with "LINQ" expressions
-# https://rules.sonarsource.com/csharp/RSPEC-3267
+# https://sonarcloud.io/organizations/sonarcloud/rules?open=csharpsquid:S3267&rule_key=csharpsquid:S3267
 dotnet_diagnostic.S3267.severity = none
 
 # CA1859: Use concrete types when possible for improved performance
@@ -58,9 +58,10 @@ indent_size = 4
 
 # IDE0161: Namespace declaration preferences
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0161
-# Prefer file-scoped namespaces for new files; existing block-scoped files should not be converted unless explicitly asked
+# File-scoped namespaces are mandatory for new and existing C# files.
 [*.cs]
-csharp_style_namespace_declarations = file_scoped:suggestion
+csharp_style_namespace_declarations = file_scoped:error
+dotnet_diagnostic.IDE0161.severity = error
 
 # Top-level statements: DO NOT USE
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0210-ide0211

@@ -1,16 +1,15 @@
-namespace Codebelt.Extensions.YamlDotNet.Assets
+namespace Codebelt.Extensions.YamlDotNet.Assets;
+
+public enum BookCategory
 {
-    public enum BookCategory
-    {
-        Fiction,
-        NonFiction,
-        Technical
-    }
+    Fiction,
+    NonFiction,
+    Technical
+}
 
-    public class CategorizedBook
-    {
-        public string Title { get; set; }
+public class CategorizedBook
+{
+    public string Title { get; set; }
 
-        public BookCategory Category { get; set; }
-    }
+    public BookCategory Category { get; set; }
 }

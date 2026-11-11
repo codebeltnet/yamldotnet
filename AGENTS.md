@@ -4,7 +4,7 @@ This document provides guidance for AI agents working in this repository.
 
 ## Project Overview
 
-Codebelt.Extensions.YamlDotNet is a suite of .NET libraries providing uniform, opinionated, and extensible APIs for working with YamlDotNet. The solution targets .NET 10.0, .NET 9.0, and .NET Standard 2.0. It includes:
+Codebelt.Extensions.YamlDotNet is a suite of .NET libraries providing uniform, opinionated, and extensible APIs for working with YamlDotNet. The solution targets .NET 11.0 and .NET 10.0, with .NET Standard 2.0 additionally supported by the core package. It includes:
 
 - **Codebelt.Extensions.YamlDotNet** — Core extensions for YAML serialization, dynamic contracts, and converters.
 - **Codebelt.Extensions.AspNetCore.Text.Yaml** — ASP.NET Core integration with bootstrapping and dependency injection support.

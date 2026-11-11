@@ -1,25 +1,24 @@
-﻿using Codebelt.Extensions.AspNetCore.Text.Yaml.Converters;
+using Codebelt.Extensions.AspNetCore.Text.Yaml.Converters;
 using Codebelt.Extensions.YamlDotNet.Formatters;
 using Cuemon.AspNetCore.Mvc.Formatters;
 
-namespace Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml
+namespace Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml;
+
+/// <summary>
+/// This class handles serialization of objects to YAML using <see cref="YamlFormatter"/>.
+/// </summary>
+public class YamlSerializationOutputFormatter : StreamOutputFormatter<YamlFormatter, YamlFormatterOptions>
 {
     /// <summary>
-    /// This class handles serialization of objects to YAML using <see cref="YamlFormatter"/>.
+    /// Initializes a new instance of the <see cref="YamlSerializationOutputFormatter"/> class.
     /// </summary>
-    public class YamlSerializationOutputFormatter : StreamOutputFormatter<YamlFormatter, YamlFormatterOptions>
+    /// <param name="options">The <see cref="YamlFormatterOptions"/> which need to be configured.</param>
+    public YamlSerializationOutputFormatter(YamlFormatterOptions options) : base(options)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="YamlSerializationOutputFormatter"/> class.
-        /// </summary>
-        /// <param name="options">The <see cref="YamlFormatterOptions"/> which need to be configured.</param>
-        public YamlSerializationOutputFormatter(YamlFormatterOptions options) : base(options)
+        options.Settings.Converters.AddHttpExceptionDescriptorConverter(o => o.SensitivityDetails = options.SensitivityDetails);
+        foreach (var mediaType in options.SupportedMediaTypes)
         {
-            options.Settings.Converters.AddHttpExceptionDescriptorConverter(o => o.SensitivityDetails = options.SensitivityDetails);
-            foreach (var mediaType in options.SupportedMediaTypes)
-            {
-                SupportedMediaTypes.Add(mediaType.ToString());
-            }
+            SupportedMediaTypes.Add(mediaType.ToString());
         }
     }
 }

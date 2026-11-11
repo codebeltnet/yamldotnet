@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Threading.Tasks;
 using Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters;
 using Codebelt.Extensions.Xunit;
